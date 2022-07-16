@@ -11,6 +11,11 @@ import {
 
 } from "react-native";
 import Icon from '@expo/vector-icons/Entypo';
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { AuthContext } from '../context/context';
+
+
+
 
 const Login = ({ navigation }) => {
 
@@ -19,6 +24,57 @@ const Login = ({ navigation }) => {
     const updateSecureTextEntry = () => {
         setsecuretext(!securetext)
     }
+    const { signIn } = React.useContext(AuthContext);
+    const [data, setData] = React.useState({
+        phone: '',
+        password: '',
+        loading: false,
+        check_textInputChange: false,
+        secureTextEntry: true,
+    });
+
+    const textInputChange = (val) => {
+        if (val.length != 0) {
+            setData({
+                ...data,
+                phone: val,
+                check_textInputChange: true,
+            });
+        } else {
+            setData({
+                ...data,
+                phone: val,
+                check_textInputChange: false,
+            });
+        }
+    }
+
+    const handlePasswordChange = (val) => {
+
+        setData({
+            ...data,
+            password: val,
+
+        });
+
+    }
+
+    const loginHandle = (phone, password) => {
+        setData({
+            ...data,
+            loading: true
+        });
+        console.log(phone, password)
+        signIn(phone, password);
+        setTimeout(() => {
+            setData({
+                ...data,
+                loading: false
+            });
+        }, 10000)
+
+    }
+
 
     return (
 
@@ -26,10 +82,6 @@ const Login = ({ navigation }) => {
 
 
             <StatusBar barStyle='dark-content' backgroundColor="#000000" hidden={false} translucent={true} />
-
-
-
-
             <View style={styles.container}>
 
                 <View style={{ marginTop: 20, alignItems: "center" }}>
@@ -37,7 +89,7 @@ const Login = ({ navigation }) => {
                     <Text style={{ fontWeight: "bold", marginTop: 10, fontSize: 20 }}>Sign in</Text>
                 </View>
 
-                <View style={{ marginTop: 50,marginBottom:15 }}>
+                <View style={{ marginTop: 50, marginBottom: 15 }}>
 
                     <Text style={{ fontSize: 20, fontWeight: "900", marginLeft: 25, letterSpacing: 2 }}>Let's get you in</Text>
                     <Text style={{ fontSize: 15, marginLeft: 25 }}>Welcome, you have been missed</Text>
@@ -52,13 +104,12 @@ const Login = ({ navigation }) => {
                     />
 
                     <TextInput
-                        placeholder="Email"
+                        placeholder="Phone"
                         placeholderTextColor="#666666"
-                        keyboardType='email-address'
+                        keyboardType='number-pad'
                         style={styles.textInput}
                         autoCapitalize="none"
-                    // onChangeText={(val) => setemail(val)}
-                    />
+                        onChangeText={(val) => textInputChange(val)} />
                 </View>
 
                 <View style={styles.Formcontainer}>
@@ -74,7 +125,7 @@ const Login = ({ navigation }) => {
                         secureTextEntry={securetext ? true : false}
                         style={styles.textInput}
                         autoCapitalize="none"
-                    // onChangeText={(val) => setpassword(val)}
+                        onChangeText={(val) => handlePasswordChange(val)}
                     />
                     <TouchableOpacity
                         onPress={updateSecureTextEntry}>
@@ -104,8 +155,8 @@ const Login = ({ navigation }) => {
                 <View style={{ marginTop: 30 }}>
                     <TouchableOpacity
                         style={styles.signIn}
-                    // onPress={() => { loginHandle(data.phone, data.password) }}
-                    onPress={() => navigation.navigate("Home")}
+                        onPress={() => { loginHandle(data.phone, data.password) }}
+                    // onPress={() => navigation.navigate("Home")}
                     >
                         <View
                             style={{ backgroundColor: "#0096C7", width: "115%", height: "100%", alignItems: "center", borderRadius: 10 }}
@@ -119,12 +170,10 @@ const Login = ({ navigation }) => {
 
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{marginTop:15,alignItems:"center"}}
-                    onPress={() => navigation.navigate("Register")}
+                    <TouchableOpacity style={{ marginTop: 15, alignItems: "center" }}
+                        onPress={() => navigation.navigate("Register")}
                     >
-
-
-                    <Text>Don't Have an account? <Text style={{color:"#0096C7"}}>Create One</Text></Text>
+                        <Text>Don't Have an account? <Text style={{ color: "#0096C7" }}>Create One</Text></Text>
                     </TouchableOpacity>
 
 
@@ -153,7 +202,7 @@ const styles = StyleSheet.create({
     forgotpass: {
         color: "#0096C7",
         fontSize: 14,
-        fontFamily: "Arial",
+
         marginLeft: 20,
         marginTop: 15
     },

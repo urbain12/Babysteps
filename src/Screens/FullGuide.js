@@ -10,13 +10,13 @@ import {
     ScrollView,
     TextInput,
 } from "react-native";
-import { MaterialCommunityIcons, FontAwesome5, FontAwesome,Feather, Ionicons, Entypo, AntDesign,MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, FontAwesome5, FontAwesome, Feather, Ionicons, Entypo, AntDesign, MaterialIcons } from "@expo/vector-icons";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../context/context';
 
 
 
-const Settings = ({ navigation }) => {
+const FullGuide = ({ navigation }) => {
 
     const format = (amount) => {
         return Number(amount)
@@ -39,8 +39,11 @@ const Settings = ({ navigation }) => {
                 ...styles.shadow
             }}>
                 <View style={{ flexDirection: "row" }}>
+                    <TouchableOpacity onPress={() => { navigation.goBack() }} style={{ width: "15%", alignItems: "center", marginTop: 10 }}>
+                        <Ionicons name="arrow-back" size={30} color="#adb5bd" />
+                    </TouchableOpacity>
                     <View style={{ width: "60%", alignItems: "flex-start", }}>
-                        <Text style={[styles.Title, { color: "#000",marginTop:20,fontSize:20 }]}>Settings</Text>
+                        <Text style={[styles.Title, { color: "#000", marginTop: 20, fontSize: 20 }]}>Title</Text>
                     </View>
 
                 </View>
@@ -48,72 +51,18 @@ const Settings = ({ navigation }) => {
 
 
             <ScrollView>
-                <TouchableOpacity style={styles.container} >
+                <View style={styles.container} >
                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
 
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
+                        <View style={{ width: "15%", alignItems: "center", marginTop: 10 }}>
                             <Entypo name="chat" size={30} color="#adb5bd" />
                         </View>
 
-                        <View style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Chat</Text>
+                        <View style={{ width: "85%", marginLeft: -15, marginTop: 5 }}>
+                            <Text style={styles.Title}>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</Text>
                         </View>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
-                        </View>
-
                     </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.container} >
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
-
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialCommunityIcons name="bell-alert" size={30} color="#adb5bd" />
-                        </View>
-
-                        <View style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Notifications</Text>
-                        </View>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
-                        </View>
-
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.container} >
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
-
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialCommunityIcons name="onepassword" size={30} color="#adb5bd" />
-                        </View>
-
-                        <View style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Change Password</Text>
-                        </View>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
-                        </View>
-
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={[styles.container,{marginBottom:50}]} 
-                onPress={() => context.signOut()}
-                >
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
-
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
-                            <AntDesign name="logout" size={30} color="red" />
-                        </View>
-
-                        <View style={{ width: "85%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Logout</Text>
-                        </View>
-
-                    </View>
-                </TouchableOpacity>
+                </View>
 
             </ScrollView>
 
@@ -131,7 +80,7 @@ const Settings = ({ navigation }) => {
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", justifyContent: "center", alignItems: "center", width: "40%" }}
-                onPress={() => navigation.navigate("Guide")}
+                    onPress={() => navigation.navigate("Guide")}
                 >
 
                     <Feather name="book-open" size={30} color="#05375a" />
@@ -139,7 +88,7 @@ const Settings = ({ navigation }) => {
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", justifyContent: "center", alignItems: "center", width: "30%" }}
-                onPress={() => navigation.navigate("Settings")}
+                    onPress={() => navigation.navigate("Settings")}
                 >
 
                     <AntDesign name="setting" size={30} color="#05375a" />
@@ -150,13 +99,11 @@ const Settings = ({ navigation }) => {
 };
 
 
-export default Settings;
+export default FullGuide;
 
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: "#e0e0e0",
-        height: 70,
         width: "92%",
         marginHorizontal: 15,
         marginTop: 25,
@@ -164,7 +111,7 @@ const styles = StyleSheet.create({
 
     },
     Title: {
-         
+
         fontSize: 16,
         fontWeight: "bold",
         marginHorizontal: 15,
@@ -172,7 +119,7 @@ const styles = StyleSheet.create({
         color: "#05375a"
     },
     Texties: {
-         
+
         fontSize: 12,
         fontWeight: "normal",
         marginHorizontal: 15,

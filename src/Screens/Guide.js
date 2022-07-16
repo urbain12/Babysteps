@@ -38,27 +38,31 @@ const Guide = ({ navigation }) => {
 
                 <Text style={{marginLeft:12,marginTop:10,marginBottom:10,color:"#707070"}}>KURYA</Text>
                 <ScrollView style={{  width: "100%",height: "100%", flexDirection: "row",marginBottom:10}} horizontal={true} showsHorizontalScrollIndicator={false}>
+                    <TouchableOpacity onPress={() => navigation.navigate("FullGuide")}>
+                        <View style={styles.Logo}>
+                            <Text style={styles.content}>Amezi</Text>
+                            <Text style={styles.content}>0-3</Text>
+                        </View>
+                    </TouchableOpacity>
+
                     <View>
                         <View style={styles.Logo}>
-                            <Text style={styles.content}>Indyo Yuzuye</Text>
+                             <Text style={styles.content}>Amezi</Text>
+                            <Text style={styles.content}>3-6</Text>
                         </View>
                     </View>
 
                     <View>
                         <View style={styles.Logo}>
-                            <Text style={styles.content}>Indyo Yuzuye</Text>
+                             <Text style={styles.content}>Amezi</Text>
+                            <Text style={styles.content}>6-9</Text>
                         </View>
                     </View>
 
                     <View>
                         <View style={styles.Logo}>
-                            <Text style={styles.content}>Indyo Yuzuye</Text>
-                        </View>
-                    </View>
-
-                    <View>
-                        <View style={styles.Logo}>
-                            <Text style={styles.content}>Indyo Yuzuye</Text>
+                             <Text style={styles.content}>Amezi</Text>
+                            <Text style={styles.content}>9-12</Text>
                         </View>
                     </View>
 
@@ -69,25 +73,29 @@ const Guide = ({ navigation }) => {
                 <ScrollView style={{  width: "100%",height: "100%", flexDirection: "row",marginBottom:10}} horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View>
                         <View style={[styles.Logo,{backgroundColor:"#2a6f97"}]}>
-                            <Text style={styles.content}>iGIKURIRO</Text>
+                            <Text style={styles.content}>Amezi</Text>
+                            <Text style={styles.content}>0-3</Text>
                         </View>
                     </View>
 
                     <View>
                         <View style={[styles.Logo,{backgroundColor:"#2a6f97"}]}>
-                            <Text style={styles.content}>iGIKURIRO</Text>
+                            <Text style={styles.content}>Amezi</Text>
+                            <Text style={styles.content}>3-6</Text>
                         </View>
                     </View>
 
                     <View>
                         <View style={[styles.Logo,{backgroundColor:"#2a6f97"}]}>
-                            <Text style={styles.content}>iGIKURIRO</Text>
+                            <Text style={styles.content}>Amezi</Text>
+                            <Text style={styles.content}>6-9</Text>
                         </View>
                     </View>
 
                     <View>
                         <View style={[styles.Logo,{backgroundColor:"#2a6f97"}]}>
-                            <Text style={styles.content}>iGIKURIRO</Text>
+                            <Text style={styles.content}>Amezi</Text>
+                            <Text style={styles.content}>9-12</Text>
                         </View>
                     </View>
 
@@ -98,25 +106,25 @@ const Guide = ({ navigation }) => {
                 <ScrollView style={{  width: "100%",height: "100%", flexDirection: "row",marginBottom:10}} horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View>
                         <View style={[styles.Logo,{backgroundColor:"#64dfdf"}]}>
-                            <Text style={[styles.content,{color:"#000"}]}>Kugira isuku</Text>
+                            <Text style={[styles.content,{color:"#000"}]}>Umubiri</Text>
                         </View>
                     </View>
 
                     <View>
                         <View style={[styles.Logo,{backgroundColor:"#64dfdf"}]}>
-                            <Text style={[styles.content,{color:"#000"}]}>Kugira isuku</Text>
+                            <Text style={[styles.content,{color:"#000"}]}>Amazuru</Text>
                         </View>
                     </View>
 
                     <View>
                         <View style={[styles.Logo,{backgroundColor:"#64dfdf"}]}>
-                            <Text style={[styles.content,{color:"#000"}]}>Kugira isuku</Text>
+                            <Text style={[styles.content,{color:"#000"}]}>Amatwi</Text>
                         </View>
                     </View>
 
                     <View>
                         <View style={[styles.Logo,{backgroundColor:"#64dfdf"}]}>
-                            <Text style={[styles.content,{color:"#000"}]}>Kugira isuku</Text>
+                            <Text style={[styles.content,{color:"#000"}]}>Amenyo</Text>
                         </View>
                     </View>
 
@@ -145,7 +153,7 @@ const styles = StyleSheet.create({
 
     },
     Title: {
-        fontFamily: "Arial",
+         
         fontSize: 16,
         fontWeight: "bold",
         marginHorizontal: 15,
@@ -153,13 +161,13 @@ const styles = StyleSheet.create({
         color: "#05375a"
     },
     content: {
-        fontFamily: "Arial",
+         
         fontSize: 16,
         fontWeight: "bold",
         color: "#05375a"
     },
     Texties: {
-        fontFamily: "Arial",
+         
         fontSize: 12,
         fontWeight: "normal",
         marginHorizontal: 15,
@@ -225,7 +233,7 @@ const styles = StyleSheet.create({
         shadowRadius: 4.65,
     },
     content: {
-        fontFamily: "Arial",
+         
         fontSize: 16,
         fontWeight: "bold",
         color: "#fff"
