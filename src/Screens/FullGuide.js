@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {
     View,
     Text,
@@ -16,7 +16,7 @@ import { AuthContext } from '../context/context';
 
 
 
-const FullGuide = ({ navigation }) => {
+const FullGuide = (props) => {
 
     const format = (amount) => {
         return Number(amount)
@@ -25,7 +25,7 @@ const FullGuide = ({ navigation }) => {
 
     };
     const context = React.useContext(AuthContext)
-
+    
     return (
         <>
             <StatusBar backgroundColor="#00bcd4" translucent={false} hidden={false} barStyle="dark-content" />
@@ -39,11 +39,11 @@ const FullGuide = ({ navigation }) => {
                 ...styles.shadow
             }}>
                 <View style={{ flexDirection: "row" }}>
-                    <TouchableOpacity onPress={() => { navigation.goBack() }} style={{ width: "15%", alignItems: "center", marginTop: 10 }}>
+                    <TouchableOpacity onPress={() => { props.navigation.goBack() }} style={{ width: "15%", alignItems: "center", marginTop: 10 }}>
                         <Ionicons name="arrow-back" size={30} color="#adb5bd" />
                     </TouchableOpacity>
                     <View style={{ width: "60%", alignItems: "flex-start", }}>
-                        <Text style={[styles.Title, { color: "#000", marginTop: 20, fontSize: 20 }]}>Title</Text>
+                        <Text style={[styles.Title, { color: "#000", marginTop: 20, fontSize: 20 }]}>{props.route.params.guide.Title}-{props.route.params.guide.SubTitle}</Text>
                     </View>
 
                 </View>
@@ -59,7 +59,7 @@ const FullGuide = ({ navigation }) => {
                         </View>
 
                         <View style={{ width: "85%", marginLeft: -15, marginTop: 5 }}>
-                            <Text style={styles.Title}>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</Text>
+                            <Text style={styles.Title}>{props.route.params.guide.Description}</Text>
                         </View>
                     </View>
                 </View>
@@ -73,14 +73,14 @@ const FullGuide = ({ navigation }) => {
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", width: "30%", justifyContent: "center", alignItems: "center" }}
-                    onPress={() => navigation.navigate("Home")}>
+                    onPress={() => props.navigation.navigate("Home")}>
 
                     <AntDesign name="home" size={30} color="#05375a" />
                 </TouchableOpacity>
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", justifyContent: "center", alignItems: "center", width: "40%" }}
-                    onPress={() => navigation.navigate("Guide")}
+                    onPress={() => props.navigation.navigate("Guide")}
                 >
 
                     <Feather name="book-open" size={30} color="#05375a" />
@@ -88,7 +88,7 @@ const FullGuide = ({ navigation }) => {
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", justifyContent: "center", alignItems: "center", width: "30%" }}
-                    onPress={() => navigation.navigate("Settings")}
+                    onPress={() => props.navigation.navigate("Settings")}
                 >
 
                     <AntDesign name="setting" size={30} color="#05375a" />

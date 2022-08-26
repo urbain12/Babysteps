@@ -155,7 +155,7 @@ const HomeStackNavigator = (props) => {
                 // Authorization: `Token ${my_token}`,
             };
 
-            await axios.post("http://admin.amazi.rw/customer_login/", postObj)
+            await axios.post("https://hidden-wave-73473.herokuapp.com/customer_login/", postObj)
                 .then(res => {
                     console.log(res)
                     if (res.data.code == 200) {
