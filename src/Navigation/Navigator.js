@@ -173,6 +173,7 @@ const HomeStackNavigator = (props) => {
                             type: 'LOGIN',
                             token: JSON.stringify(res.data.token),
                             user_id: JSON.stringify(res.data.user_id),
+                            
 
                         })
                     }
@@ -232,6 +233,8 @@ const HomeStackNavigator = (props) => {
                     type: 'RETRIEVE_TOKEN',
                     token: token,
                     user_id: user_id,
+
+
 
                 })
             } catch (error) {
