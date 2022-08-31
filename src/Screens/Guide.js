@@ -39,32 +39,26 @@ const Guide = ({ navigation }) => {
 
             <ScrollView >
                 <TouchableOpacity style={{ width: "100%", alignItems: "flex-end", marginTop: 20, marginLeft: -20 }}
-                    onPress={() => navigation.navigate("Home")}
-                >
+                    onPress={() => navigation.navigate("Home")}>
                     <Entypo name="cross" size={40} color="#05375a" />
                 </TouchableOpacity>
 
                 <Text style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>IMIRIRE</Text>
-                <ScrollView style={{ width: "100%", height: "100%", flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <ScrollView style={{ width: "100%",flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
 
                     {guides.filter(guide => guide.Title == 'Imirire').map(guide => {
                         return (
-                            <TouchableOpacity onPress={() => navigation.navigate("FullGuide",{"guide":guide})}>
-                                <View style={styles.Logo}>
+                            <TouchableOpacity style={styles.Logo} onPress={() => navigation.navigate("FullGuide",{"guide":guide})}>
+                                <View >
                                     <Text style={styles.content}>{guide.SubTitle}</Text>
                                 </View>
                             </TouchableOpacity>
                         )
                     })}
-
-
-
-
-
                 </ScrollView>
 
                 <Text style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>IMIKURIRE</Text>
-                <ScrollView style={{ width: "100%", height: "100%", flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <ScrollView style={{ width: "100%",flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
 
 
                     {guides.filter(guide => guide.Title == 'Imikurire').map(guide => {
@@ -81,7 +75,7 @@ const Guide = ({ navigation }) => {
                 </ScrollView>
 
                 <Text style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>ISUKU</Text>
-                <ScrollView style={{ width: "100%", height: "100%", flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <ScrollView style={{ width: "100%",flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
 
                     {guides.filter(guide => guide.Title == 'Isuku').map(guide => {
                         return (
@@ -185,8 +179,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#0466c8",
         borderRadius: 8,
         width: 140,
-        height: 150,
         marginLeft: 10,
+        height: 150,
         alignItems: "center",
         justifyContent: "center",
         shadowColor: "#707070",
