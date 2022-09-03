@@ -9,6 +9,7 @@ import {
     ImageBackground,
     ScrollView,
     TextInput,
+    ActivityIndicator
 } from "react-native";
 import axios from 'axios';
 import { MaterialCommunityIcons, FontAwesome5, FontAwesome, Ionicons, Entypo, AntDesign, MaterialIcons, Feather } from "@expo/vector-icons";
@@ -16,7 +17,7 @@ import { TextInputMask } from 'react-native-masked-text';
 
 
 const Guide = ({ navigation }) => {
-    const [guides, setGuides] = useState([])
+    const [guides, setGuides] = useState([1])
     const getDashboardInfo = async () => {
         const guides_ = await axios.get(`https://hidden-wave-73473.herokuapp.com/AllGuides/`)
         setGuides(guides_.data)
@@ -44,51 +45,81 @@ const Guide = ({ navigation }) => {
                 </TouchableOpacity>
 
                 <Text style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>IMIRIRE</Text>
-                <ScrollView style={{ width: "100%",flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <ScrollView style={{ width: "100%", flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                    {JSON.stringify(guides) === '[1]' ? (
+                        <ActivityIndicator size='large' color='blue' style={{ marginTop: 10 }} />
+                    ) : (
+                        guides.filter(guide => guide.Title == 'Imirire').length > 0 ? (
 
-                    {guides.filter(guide => guide.Title == 'Imirire').map(guide => {
-                        return (
-                            <TouchableOpacity style={styles.Logo} onPress={() => navigation.navigate("FullGuide",{"guide":guide})}>
-                                <View >
-                                    <Text style={styles.content}>{guide.SubTitle}</Text>
-                                </View>
-                            </TouchableOpacity>
+                            guides.filter(guide => guide.Title == 'Imirire').map(guide => {
+                                return (
+                                    <TouchableOpacity style={styles.Logo} onPress={() => navigation.navigate("FullGuide", { "guide": guide })}>
+                                        <View >
+                                            <Text style={styles.content}>{guide.SubTitle}</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })
+
+                        ) : (
+                            <View style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>
+                                <Text>No Imirire guide yet...</Text>
+                            </View>
                         )
-                    })}
+                    )}
+
                 </ScrollView>
 
                 <Text style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>IMIKURIRE</Text>
-                <ScrollView style={{ width: "100%",flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                <ScrollView style={{ width: "100%", flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
 
 
-                    {guides.filter(guide => guide.Title == 'Imikurire').map(guide => {
-                        return (
-                            <TouchableOpacity onPress={() => navigation.navigate("FullGuide",{"guide":guide})}>
-                                <View style={styles.Logo1}>
-                                    <Text style={styles.content}>{guide.SubTitle}</Text>
-                                </View>
-                            </TouchableOpacity>
+                {JSON.stringify(guides) === '[1]' ? (
+                        <ActivityIndicator size='large' color='blue' style={{ marginTop: 10 }} />
+                    ) : (
+                        guides.filter(guide => guide.Title == 'Imikurire').length > 0 ? (
+
+                            guides.filter(guide => guide.Title == 'Imikurire').map(guide => {
+                                return (
+                                    <TouchableOpacity style={styles.Logo1} onPress={() => navigation.navigate("FullGuide", { "guide": guide })}>
+                                        <View >
+                                            <Text style={styles.content}>{guide.SubTitle}</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })
+
+                        ) : (
+                            <View style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>
+                                <Text>No Imirire guide yet...</Text>
+                            </View>
                         )
-                    })}
-
+                    )}
 
                 </ScrollView>
 
                 <Text style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>ISUKU</Text>
-                <ScrollView style={{ width: "100%",flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                {JSON.stringify(guides) === '[1]' ? (
+                        <ActivityIndicator size='large' color='blue' style={{ marginTop: 10 }} />
+                    ) : (
+                        guides.filter(guide => guide.Title == 'Isuku').length > 0 ? (
 
-                    {guides.filter(guide => guide.Title == 'Isuku').map(guide => {
-                        return (
-                            <TouchableOpacity onPress={() => navigation.navigate("FullGuide",{"guide":guide})}>
-                                <View style={styles.Logo2}>
-                                    <Text style={styles.content}>{guide.SubTitle}</Text>
-                                </View>
-                            </TouchableOpacity>
+                            guides.filter(guide => guide.Title == 'Isuku').map(guide => {
+                                return (
+                                    <TouchableOpacity style={styles.Logo2} onPress={() => navigation.navigate("FullGuide", { "guide": guide })}>
+                                        <View >
+                                            <Text style={styles.content}>{guide.SubTitle}</Text>
+                                        </View>
+                                    </TouchableOpacity>
+                                )
+                            })
+
+                        ) : (
+                            <View style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>
+                                <Text>No Imirire guide yet...</Text>
+                            </View>
                         )
-                    })}
-
-
-                </ScrollView>
+                    )}
 
             </ScrollView>
 

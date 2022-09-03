@@ -12,10 +12,13 @@ import {
 } from "react-native";
 import { MaterialCommunityIcons, FontAwesome5, FontAwesome, Ionicons, Entypo, AntDesign, MaterialIcons, Feather } from "@expo/vector-icons";
 import { TextInputMask } from 'react-native-masked-text';
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import axios from 'axios';
 
 
 const Home = ({ navigation }) => {
     const [days, setDays] = useState('null')
+    const [customer, setCustomer] = useState('')
 
 
     const format = (amount) => {
@@ -24,6 +27,28 @@ const Home = ({ navigation }) => {
             .replace(/\d(?=(\d{3})+\.)/g, '$&,')
 
     };
+
+    useEffect(() => {
+        async function setInfo() {
+
+            const id = await AsyncStorage.getItem('user_id')
+            axios.get(`https://hidden-wave-73473.herokuapp.com/getchildbyid/${id}`).then((res) => {
+                setCustomer(res.data[0])
+                if (res.data[0].DOB != null) {
+                    getVaccineDay(res.data[0].DOB)
+                }
+                else if (res.data[0].DOB == null) {
+                    setDays('nulll')
+                }
+            }).catch(err => {
+                console.log(err)
+            })
+
+        }
+
+        setInfo()
+
+    }, [])
 
     const getVaccineDay = (my_date) => {
         var sub_date = my_date
@@ -178,11 +203,11 @@ const Home = ({ navigation }) => {
                     </TouchableOpacity>
 
                     <View style={{ width: "60%", alignItems: "flex-start", marginTop: 10 }}>
-                        <Text style={[styles.Title, { color: "#05375a" }]}>Karbain</Text>
-                        <Text style={[styles.Texties, { color: "black" }]}>1 year</Text>
+                        <Text style={[styles.Title, { color: "#05375a" }]}>{customer.FirstName}</Text>
+                        <Text style={[styles.Texties, { color: "black" }]}>{customer.DOB}</Text>
                     </View>
 
-                    <TouchableOpacity style={{ width: "20%", alignItems: "flex-end", marginTop: 20, marginLeft: -20 }}>
+                    <TouchableOpacity style={{ width: "20%", alignItems: "flex-end", marginTop: 20, marginLeft: -20 }} onPress={() => navigation.navigate("Chat")}>
                         <AntDesign name="wechat" size={34} color="#05375a" />
                     </TouchableOpacity>
 

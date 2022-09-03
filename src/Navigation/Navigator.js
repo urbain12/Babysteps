@@ -10,6 +10,8 @@ import Guide from '../Screens/Guide';
 import Settings from '../Screens/Settings';
 import Register from '../Screens/Register';
 import FullGuide  from '../Screens/FullGuide';
+import Chat from '../Screens/Chat';
+import ChangePassword from '../Screens/ChangePassword';
 
 import { AuthContext } from '../context/context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -280,6 +282,8 @@ const HomeStackNavigator = (props) => {
                 {/* <NavigationContainer> */}
                     <Stack.Navigator screenOptions={screenOptionStyle} >
                         <Stack.Screen name="Home" component={Home} />
+                        <Stack.Screen name="Chat" component={Chat} />
+                        <Stack.Screen name="ChangePassword" component={ChangePassword} />
                         <Stack.Screen name="Guide" component={Guide} />
                         <Stack.Screen name="FullGuide" component={FullGuide} />
                         <Stack.Screen name="Settings" component={Settings} />

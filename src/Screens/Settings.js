@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     View,
     Text,
@@ -25,7 +25,6 @@ const Settings = ({ navigation }) => {
 
     };
     const context = React.useContext(AuthContext)
-
     return (
         <>
             <StatusBar backgroundColor="#00bcd4" translucent={false} hidden={false} barStyle="dark-content" />
@@ -55,9 +54,9 @@ const Settings = ({ navigation }) => {
                             <Entypo name="chat" size={30} color="#adb5bd" />
                         </View>
 
-                        <View style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Chat</Text>
-                        </View>
+                        <TouchableOpacity onPress={() => navigation.navigate("Chat")} style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                            <Text style={styles.Title}>Kuganira</Text>
+                        </TouchableOpacity>
 
                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
                             <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
@@ -73,7 +72,7 @@ const Settings = ({ navigation }) => {
                         </View>
 
                         <View style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Notifications</Text>
+                            <Text style={styles.Title}>Imenyesha</Text>
                         </View>
 
                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -89,9 +88,9 @@ const Settings = ({ navigation }) => {
                             <MaterialCommunityIcons name="onepassword" size={30} color="#adb5bd" />
                         </View>
 
-                        <View style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Change Password</Text>
-                        </View>
+                        <TouchableOpacity onPress={() => navigation.navigate("ChangePassword")} style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                            <Text style={styles.Title}>Hindura ijambo banga</Text>
+                        </TouchableOpacity>
 
                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
                             <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
@@ -109,7 +108,7 @@ const Settings = ({ navigation }) => {
                         </View>
 
                         <View style={{ width: "85%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Logout</Text>
+                            <Text style={styles.Title}>Sohoka</Text>
                         </View>
 
                     </View>
