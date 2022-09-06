@@ -99,6 +99,7 @@ const Guide = ({ navigation }) => {
                 </ScrollView>
 
                 <Text style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>ISUKU</Text>
+                <ScrollView style={{ width: "100%", flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
                 {JSON.stringify(guides) === '[1]' ? (
                         <ActivityIndicator size='large' color='blue' style={{ marginTop: 10 }} />
                     ) : (
@@ -120,7 +121,7 @@ const Guide = ({ navigation }) => {
                             </View>
                         )
                     )}
-
+               </ScrollView>
             </ScrollView>
 
 
