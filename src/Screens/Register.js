@@ -30,6 +30,8 @@ const Register = ({ navigation }) => {
     }
     const [FirstName, setFirstName] = useState('')
     const [LastName, setLastName] = useState('')
+    const [MName, setMName] = useState('')
+    const [FName, setFName] = useState('')
     const [phone, setphone] = useState('')
     const [email, setemail] = useState('')
     const [Weight, setWeight] = useState('')
@@ -66,6 +68,8 @@ const Register = ({ navigation }) => {
             const postObj = new FormData();
             postObj.append('FirstName', FirstName)
             postObj.append('LastName', LastName)
+            postObj.append('MName', MName)
+            postObj.append('FName', FName)
             postObj.append('phone', phone)
             postObj.append('DOB', year + '-' + month + '-' + days)
             postObj.append('email', email)
@@ -81,7 +85,7 @@ const Register = ({ navigation }) => {
                 "Content-Type": "multipart/form-data",
             };
 
-            axios.post('https://hidden-wave-73473.herokuapp.com/register/', postObj).then((res) => {
+            axios.post('https://isarovaccine.herokuapp.com/register/', postObj).then((res) => {
                 if (res.data.code == 200) {
                     alert('Your are succesfully register Please login with you credentials')
                     navigation.navigate('Login')
@@ -133,6 +137,27 @@ const Register = ({ navigation }) => {
                                 onChangeText={text => setLastName(text)}
                             />
                         </View>
+
+                        <View style={styles.Formcontainer}>
+                            <TextInput
+                                placeholder="Izina rya nyina"
+                                placeholderTextColor="#666666"
+                                style={styles.textInput}
+                                autoCapitalize="none"
+                                onChangeText={text => setMName(text)}
+                            />
+                        </View>
+
+                        <View style={styles.Formcontainer}>
+                            <TextInput
+                                placeholder="Izina rya se"
+                                placeholderTextColor="#666666"
+                                style={styles.textInput}
+                                autoCapitalize="none"
+                                onChangeText={text => setFName(text)}
+                            />
+                        </View>
+                        
 
                         <Text style={{ marginTop: 3, fontSize: 14, marginLeft: 25 }}>Itariki Yamavuko</Text>
                         <View style={{ flexDirection: "row", marginHorizontal: 15 }}>

@@ -81,7 +81,7 @@ const ChangePassword = ({ navigation }) => {
                 // Authorization: `Token ${my_token}`,
             };
 
-            axios.put('https://hidden-wave-73473.herokuapp.com/change-password/', postObj).then((res) => {
+            axios.put('https://isarovaccine.herokuapp.com/change-password/', postObj).then((res) => {
                 console.log(res.status)
                 alert('Your request is submitted')
                 navigation.navigate('Settings')

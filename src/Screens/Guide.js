@@ -19,7 +19,7 @@ import { TextInputMask } from 'react-native-masked-text';
 const Guide = ({ navigation }) => {
     const [guides, setGuides] = useState([1])
     const getDashboardInfo = async () => {
-        const guides_ = await axios.get(`https://hidden-wave-73473.herokuapp.com/AllGuides/`)
+        const guides_ = await axios.get(`https://isarovaccine.herokuapp.com/AllGuides/`)
         setGuides(guides_.data)
     }
     useEffect(() => {
@@ -74,7 +74,7 @@ const Guide = ({ navigation }) => {
                 <ScrollView style={{ width: "100%", flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
 
 
-                {JSON.stringify(guides) === '[1]' ? (
+                    {JSON.stringify(guides) === '[1]' ? (
                         <ActivityIndicator size='large' color='blue' style={{ marginTop: 10 }} />
                     ) : (
                         guides.filter(guide => guide.Title == 'Imikurire').length > 0 ? (
@@ -99,7 +99,8 @@ const Guide = ({ navigation }) => {
                 </ScrollView>
 
                 <Text style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>ISUKU</Text>
-                {JSON.stringify(guides) === '[1]' ? (
+                <ScrollView style={{ width: "100%", flexDirection: "row", marginBottom: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
+                    {JSON.stringify(guides) === '[1]' ? (
                         <ActivityIndicator size='large' color='blue' style={{ marginTop: 10 }} />
                     ) : (
                         guides.filter(guide => guide.Title == 'Isuku').length > 0 ? (
@@ -116,148 +117,149 @@ const Guide = ({ navigation }) => {
 
                         ) : (
                             <View style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>
-                                <Text>No Imirire guide yet...</Text>
+                                <Text>No Isuku guide yet...</Text>
                             </View>
                         )
                     )}
 
-            </ScrollView>
+                </ScrollView>
+                </ScrollView>
 
 
 
 
 
-        </>
-    );
+            </>
+            );
 };
 
 
-export default Guide;
+            export default Guide;
 
-const styles = StyleSheet.create({
+            const styles = StyleSheet.create({
 
-    container: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
-
-    },
-    Title: {
-
-        fontSize: 16,
-        fontWeight: "bold",
-        marginHorizontal: 15,
-        marginTop: 10,
-        color: "#05375a"
-    },
-    content: {
-
-        fontSize: 16,
-        fontWeight: "bold",
-        color: "#05375a"
-    },
-    Texties: {
-
-        fontSize: 12,
-        fontWeight: "normal",
-        marginHorizontal: 15,
-        color: "#f4a261",
-        marginTop: 1,
+                container: {
+                flex: 1,
+            alignItems: "center",
+            justifyContent: "center"
 
     },
-    shadow: {
-        shadowColor: "#707070",
-        shadowOffset: {
-            width: 0,
+            Title: {
+
+                fontSize: 16,
+            fontWeight: "bold",
+            marginHorizontal: 15,
+            marginTop: 10,
+            color: "#05375a"
+    },
+            content: {
+
+                fontSize: 16,
+            fontWeight: "bold",
+            color: "#05375a"
+    },
+            Texties: {
+
+                fontSize: 12,
+            fontWeight: "normal",
+            marginHorizontal: 15,
+            color: "#f4a261",
+            marginTop: 1,
+
+    },
+            shadow: {
+                shadowColor: "#707070",
+            shadowOffset: {
+                width: 0,
             height: 4,
         },
-        shadowOpacity: 0.3,
-        shadowRadius: 4.65,
+            shadowOpacity: 0.3,
+            shadowRadius: 4.65,
 
-        elevation: 8,
+            elevation: 8,
     },
-    Tab: {
-        flexDirection: "row",
-        marginHorizontal: 10,
-        marginLeft: 12,
-        height: 50,
-        flex: 1,
-        alignContent: "center",
-        alignItems: "center",
-        shadowColor: "#707070",
+            Tab: {
+                flexDirection: "row",
+            marginHorizontal: 10,
+            marginLeft: 12,
+            height: 50,
+            flex: 1,
+            alignContent: "center",
+            alignItems: "center",
+            shadowColor: "#707070",
         // shadowOffset: {
-        //     width: 0,
-        //     height: 5,
-        // },
-        // shadowOpacity: 0.5,
-        // shadowRadius: 4.65,
+                //     width: 0,
+                //     height: 5,
+                // },
+                // shadowOpacity: 0.5,
+                // shadowRadius: 4.65,
 
-        // elevation: 8,
-    },
-    textInput: {
+                // elevation: 8,
+            },
+            textInput: {
 
-        borderRadius: 10,
-        alignSelf: 'center',
-        height: 55,
-        width: "90%",
-        marginTop: 10,
-        textAlign: "left",
-        padding: 10,
-        flex: 1,
-        borderBottomWidth: 1
+                borderRadius: 10,
+            alignSelf: 'center',
+            height: 55,
+            width: "90%",
+            marginTop: 10,
+            textAlign: "left",
+            padding: 10,
+            flex: 1,
+            borderBottomWidth: 1
     },
-    Logo: {
-        backgroundColor: "#0466c8",
-        borderRadius: 8,
-        width: 140,
-        marginLeft: 10,
-        height: 150,
-        alignItems: "center",
-        justifyContent: "center",
-        shadowColor: "#707070",
-        shadowOffset: {
-            width: 0,
+            Logo: {
+                backgroundColor: "#0466c8",
+            borderRadius: 8,
+            width: 140,
+            marginLeft: 10,
+            height: 150,
+            alignItems: "center",
+            justifyContent: "center",
+            shadowColor: "#707070",
+            shadowOffset: {
+                width: 0,
             height: 5
         },
-        shadowOpacity: 0.2,
-        shadowRadius: 4.65,
+            shadowOpacity: 0.2,
+            shadowRadius: 4.65,
     },
-    Logo1: {
-        backgroundColor: "#046656",
-        borderRadius: 8,
-        width: 140,
-        height: 150,
-        marginLeft: 10,
-        alignItems: "center",
-        justifyContent: "center",
-        shadowColor: "#707070",
-        shadowOffset: {
-            width: 0,
+            Logo1: {
+                backgroundColor: "#046656",
+            borderRadius: 8,
+            width: 140,
+            height: 150,
+            marginLeft: 10,
+            alignItems: "center",
+            justifyContent: "center",
+            shadowColor: "#707070",
+            shadowOffset: {
+                width: 0,
             height: 5
         },
-        shadowOpacity: 0.2,
-        shadowRadius: 4.65,
+            shadowOpacity: 0.2,
+            shadowRadius: 4.65,
     },
-    Logo2: {
-        backgroundColor: "#046689",
-        borderRadius: 8,
-        width: 140,
-        height: 150,
-        marginLeft: 10,
-        alignItems: "center",
-        justifyContent: "center",
-        shadowColor: "#707070",
-        shadowOffset: {
-            width: 0,
+            Logo2: {
+                backgroundColor: "#046689",
+            borderRadius: 8,
+            width: 140,
+            height: 150,
+            marginLeft: 10,
+            alignItems: "center",
+            justifyContent: "center",
+            shadowColor: "#707070",
+            shadowOffset: {
+                width: 0,
             height: 5
         },
-        shadowOpacity: 0.2,
-        shadowRadius: 4.65,
+            shadowOpacity: 0.2,
+            shadowRadius: 4.65,
     },
-    content: {
+            content: {
 
-        fontSize: 16,
-        fontWeight: "bold",
-        color: "#fff"
+                fontSize: 16,
+            fontWeight: "bold",
+            color: "#fff"
     },
 })
