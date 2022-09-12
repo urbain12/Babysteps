@@ -8,15 +8,36 @@ import {
     StatusBar,
     ImageBackground,
     ScrollView,
+    ActivityIndicator,
     TextInput,
 } from "react-native";
 import { MaterialCommunityIcons, FontAwesome5, FontAwesome,Feather, Ionicons, Entypo, AntDesign,MaterialIcons } from "@expo/vector-icons";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../context/context';
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import axios from 'axios'
 
 
 
 const Report = ({ navigation }) => {
+
+    const [customer, setCustomer] = useState('')
+
+    useEffect(() => {
+        async function setInfo() {
+
+            const id = await AsyncStorage.getItem('user_id')
+            axios.get(`https://isarovaccine.herokuapp.com/getchildbyid/${id}`).then((res) => {
+                setCustomer(res.data[0])
+                console.log("hello",res.data[0])
+            }).catch(err => {
+                console.log(err)
+            })
+
+        }
+
+        setInfo()
+
+    }, [])
 
     const format = (amount) => {
         return Number(amount)
@@ -24,6 +45,8 @@ const Report = ({ navigation }) => {
             .replace(/\d(?=(\d{3})+\.)/g, '$&,')
 
     };
+
+
     const context = React.useContext(AuthContext)
     return (
         <>
@@ -47,94 +70,102 @@ const Report = ({ navigation }) => {
 
 
             <ScrollView>
-                <View style={styles.container} onPress={() => navigation.navigate("Chat")}>
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20 }}>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                        </View>
-
-                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Akivuka</Text>
-                        </TouchableOpacity>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                        <Entypo name="circle-with-minus" size={30} color="red" />
-                        {/* <AntDesign name="checkcircle" size={30} color="#63a355" /> */}
-                        </View>
+                {customer.takeVax !== ''?(
+                     <View style={styles.container} onPress={() => navigation.navigate("Chat")}>
+                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20 }}>
+ 
+                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                         </View>
+ 
+                         <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                             <Text style={styles.Title}>Akivuka</Text>
+                         </TouchableOpacity>
+ 
+                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                             {customer && customer.takeVax.split(", ").includes("Birth")?(<AntDesign name="checkcircle" size={30} color="#63a355" />):(<Entypo name="circle-with-minus" size={30} color="red" />)}
+                         
+                         
+                         </View>
+                     </View>
+ 
+                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
+ 
+                     <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                     </View>
+ 
+                         <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                             <Text style={styles.Title}>Ibyumweru Bitandatu</Text>
+                         </TouchableOpacity>
+ 
+                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                         {customer && customer.takeVax.split(", ").includes("SixWeeks")?(<AntDesign name="checkcircle" size={30} color="#63a355" />):(<Entypo name="circle-with-minus" size={30} color="red" />)}
+                         </View>
+                     </View>
+ 
+                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
+ 
+                     <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                     </View>
+ 
+                         <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                             <Text style={styles.Title}>Ibyumweru 10</Text>
+                         </TouchableOpacity>
+ 
+                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                         {customer && customer.takeVax.split(", ").includes("TenWeeks")?(<AntDesign name="checkcircle" size={30} color="#63a355" />):(<Entypo name="circle-with-minus" size={30} color="red" />)}
+                         </View>
+                     </View>
+ 
+                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
+ 
+                     <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                     </View>
+ 
+                         <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                             <Text style={styles.Title}>Ibyumweru cumi nabine</Text>
+                         </TouchableOpacity>
+ 
+                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                         {customer && customer.takeVax.split(", ").includes("FourteenWeeks")?(<AntDesign name="checkcircle" size={30} color="#63a355" />):(<Entypo name="circle-with-minus" size={30} color="red" />)}
+                         </View>
+                     </View>
+ 
+ 
+                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
+ 
+                     <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                     </View>
+ 
+                         <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                             <Text style={styles.Title}>Amezi icyenda</Text>
+                         </TouchableOpacity>
+ 
+                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                         {customer && customer.takeVax.split(", ").includes("NineMonths")?(<AntDesign name="checkcircle" size={30} color="#63a355" />):(<Entypo name="circle-with-minus" size={30} color="red" />)}
+                         </View>
+                     </View>
+ 
+                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginBottom:10,marginVertical:20  }}>
+ 
+                     <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                     </View>
+ 
+                         <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                             <Text style={styles.Title}>Amezi cumi natanu</Text>
+                         </TouchableOpacity>
+ 
+                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                         {customer && customer.takeVax.split(", ").includes("FifteenMonths")?(<AntDesign name="checkcircle" size={30} color="#63a355" />):(<Entypo name="circle-with-minus" size={30} color="red" />)}
+                         </View>
+                     </View>
+ 
+                 </View>
+                ):(
+                    <View style={{marginTop:200,justifyContent:'center',alignItems:'center'}}>
+                        <ActivityIndicator size='large' color='black'/>
                     </View>
-
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
-
-                    <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                    </View>
-
-                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Ibyumweru Bitandatu</Text>
-                        </TouchableOpacity>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <AntDesign name="checkcircle" size={30} color="#63a355" />
-                        </View>
-                    </View>
-
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
-
-                    <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                    </View>
-
-                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Ibyumweru 10</Text>
-                        </TouchableOpacity>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <AntDesign name="checkcircle" size={30} color="#63a355" />
-                        </View>
-                    </View>
-
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
-
-                    <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                    </View>
-
-                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Ibyumweru cumi nabine</Text>
-                        </TouchableOpacity>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <AntDesign name="checkcircle" size={30} color="#63a355" />
-                        </View>
-                    </View>
-
-
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
-
-                    <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                    </View>
-
-                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Amezi icyenda</Text>
-                        </TouchableOpacity>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <AntDesign name="checkcircle" size={30} color="#63a355" />
-                        </View>
-                    </View>
-
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginBottom:10,marginVertical:20  }}>
-
-                    <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                    </View>
-
-                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Amezi cumi natanu</Text>
-                        </TouchableOpacity>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <AntDesign name="checkcircle" size={30} color="#63a355" />
-                        </View>
-                    </View>
-
-                </View>
+                )}
+               
             </ScrollView>
 
 
