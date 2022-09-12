@@ -307,7 +307,7 @@ const Register = ({ navigation }) => {
                                         <ActivityIndicator size='large' color='white' style={{ marginTop: 10 }} />
                                     ) :
                                         (
-                                            <Text style={{ color: "white", marginTop: 10, fontSize: 20, fontWeight: "bold" }}>Register</Text>
+                                            <Text style={{ color: "white", marginTop: 10, fontSize: 20, fontWeight: "bold" }}>Iyandikishe</Text>
                                         )}
 
                                 </View>

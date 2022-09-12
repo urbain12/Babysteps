@@ -205,10 +205,6 @@ const Home = ({ navigation }) => {
                     <View style={{ width: "60%", alignItems: "flex-start", marginTop: 10 }}>
                         <Text style={[styles.Title, { color: "#05375a" }]}>{customer && customer.FirstName}</Text>
                         <Text style={[styles.Texties, { color: "black" }]}>{customer && customer.DOB}</Text>
-<<<<<<< HEAD
-=======
-                       
->>>>>>> b6d92a9e76886520058a23fc5254beedc6740752
                     </View>
 
                     <TouchableOpacity style={{ width: "20%", alignItems: "flex-end", marginTop: 20, marginLeft: -20 }} onPress={() => navigation.navigate("Chat")}>
