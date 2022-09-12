@@ -47,14 +47,14 @@ const Settings = ({ navigation }) => {
 
 
             <ScrollView>
-                <TouchableOpacity style={styles.container} >
+                <TouchableOpacity style={styles.container} onPress={() => navigation.navigate("Chat")}>
                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
 
                         <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
                             <Entypo name="chat" size={30} color="#adb5bd" />
                         </View>
 
-                        <TouchableOpacity onPress={() => navigation.navigate("Chat")} style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
                             <Text style={styles.Title}>Kuganira</Text>
                         </TouchableOpacity>
 
@@ -64,15 +64,16 @@ const Settings = ({ navigation }) => {
 
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.container} >
+
+                <TouchableOpacity style={styles.container}onPress={() => navigation.navigate("Report")}>
                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
 
                         <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialCommunityIcons name="bell-alert" size={30} color="#adb5bd" />
+                            <MaterialCommunityIcons name="book" size={30} color="#adb5bd" />
                         </View>
 
                         <View style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Imenyesha</Text>
+                            <Text style={styles.Title}>Raporo</Text>
                         </View>
 
                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>

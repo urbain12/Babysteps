@@ -20,7 +20,7 @@ const Home = ({ navigation }) => {
     const [days, setDays] = useState('null')
     const [customer, setCustomer] = useState('')
 
-
+ 
     const format = (amount) => {
         return Number(amount)
             .toFixed(2)
