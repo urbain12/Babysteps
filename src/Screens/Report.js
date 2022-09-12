@@ -16,7 +16,7 @@ import { AuthContext } from '../context/context';
 
 
 
-const Settings = ({ navigation }) => {
+const Report = ({ navigation }) => {
 
     const format = (amount) => {
         return Number(amount)
@@ -39,7 +39,7 @@ const Settings = ({ navigation }) => {
             }}>
                 <View style={{ flexDirection: "row" }}>
                     <View style={{ width: "60%", alignItems: "flex-start", }}>
-                        <Text style={[styles.Title, { color: "#000",marginTop:20,fontSize:20 }]}>Settings</Text>
+                        <Text style={[styles.Title, { color: "#000",marginTop:20,fontSize:20 }]}>Report</Text>
                     </View>
 
                 </View>
@@ -47,74 +47,94 @@ const Settings = ({ navigation }) => {
 
 
             <ScrollView>
-                <TouchableOpacity style={styles.container} onPress={() => navigation.navigate("Chat")}>
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
+                <View style={styles.container} onPress={() => navigation.navigate("Chat")}>
+                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20 }}>
 
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
-                            <Entypo name="chat" size={30} color="#adb5bd" />
+                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
                         </View>
 
                         <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Kuganira</Text>
+                            <Text style={styles.Title}>Akivuka</Text>
                         </TouchableOpacity>
 
                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
+                        <Entypo name="circle-with-minus" size={30} color="red" />
+                        {/* <AntDesign name="checkcircle" size={30} color="#63a355" /> */}
                         </View>
-
                     </View>
-                </TouchableOpacity>
 
-                <TouchableOpacity style={styles.container}onPress={() => navigation.navigate("Report")}>
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
+                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
 
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialCommunityIcons name="book" size={30} color="#adb5bd" />
-                        </View>
-
-                        <View style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Raporo</Text>
-                        </View>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
-                        </View>
-
+                    <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
                     </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.container} >
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
 
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialCommunityIcons name="onepassword" size={30} color="#adb5bd" />
-                        </View>
-
-                        <TouchableOpacity onPress={() => navigation.navigate("ChangePassword")} style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Hindura ijambo banga</Text>
+                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                            <Text style={styles.Title}>Ibyumweru Bitandatu</Text>
                         </TouchableOpacity>
 
                         <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
+                            <AntDesign name="checkcircle" size={30} color="#63a355" />
                         </View>
-
                     </View>
-                </TouchableOpacity>
-                <TouchableOpacity style={[styles.container,{marginBottom:50}]} 
-                onPress={() => context.signOut()}
-                >
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
 
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
-                            <AntDesign name="logout" size={30} color="red" />
-                        </View>
+                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
 
-                        <View style={{ width: "85%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Sohoka</Text>
-                        </View>
-
+                    <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
                     </View>
-                </TouchableOpacity>
 
+                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                            <Text style={styles.Title}>Ibyumweru 10</Text>
+                        </TouchableOpacity>
+
+                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                            <AntDesign name="checkcircle" size={30} color="#63a355" />
+                        </View>
+                    </View>
+
+                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
+
+                    <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                    </View>
+
+                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                            <Text style={styles.Title}>Ibyumweru cumi nabine</Text>
+                        </TouchableOpacity>
+
+                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                            <AntDesign name="checkcircle" size={30} color="#63a355" />
+                        </View>
+                    </View>
+
+
+                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20  }}>
+
+                    <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                    </View>
+
+                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                            <Text style={styles.Title}>Amezi icyenda</Text>
+                        </TouchableOpacity>
+
+                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                            <AntDesign name="checkcircle" size={30} color="#63a355" />
+                        </View>
+                    </View>
+
+                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginBottom:10,marginVertical:20  }}>
+
+                    <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                    </View>
+
+                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                            <Text style={styles.Title}>Amezi cumi natanu</Text>
+                        </TouchableOpacity>
+
+                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                            <AntDesign name="checkcircle" size={30} color="#63a355" />
+                        </View>
+                    </View>
+
+                </View>
             </ScrollView>
 
 
@@ -150,17 +170,17 @@ const Settings = ({ navigation }) => {
 };
 
 
-export default Settings;
+export default Report;
 
 const styles = StyleSheet.create({
 
     container: {
         backgroundColor: "#e0e0e0",
-        height: 70,
         width: "92%",
         marginHorizontal: 15,
         marginTop: 25,
         borderRadius: 20,
+        marginRight:102
 
     },
     Title: {
