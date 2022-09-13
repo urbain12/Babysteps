@@ -166,13 +166,13 @@ const Chat = ({ navigation }) => {
                     })
                 ) : (
                     <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                        <Text>No Response yet...</Text>
+                        <Text>Ntagisubizo?</Text>
                     </View>
                 )}
             </ScrollView>
             <View>
                 <TouchableOpacity onPress={() => { setIsVisible(true) }} style={{ width: '90%', alignSelf: 'center', justifyContent: 'center', marginVertical: 20, borderWidth: 1, borderColor: '#fff', backgroundColor: "#0771b8", height: 50, flexDirection: "row", alignItems: "center", borderRadius: 20 }}>
-                    <Text style={{ color: 'white' }}>Send Query</Text>
+                    <Text style={{ color: 'white' }}>Ohereza ubutumwa </Text>
                 </TouchableOpacity>
             </View>
 
@@ -192,9 +192,9 @@ const Chat = ({ navigation }) => {
                             <KeyboardAvoidingView behavior="position">
                                 <View style={{ width: '90%', backgroundColor: '#e8e8f5', borderRadius: 20 }}>
                                     <View style={{ backgroundColor: "#f5f6fb", width: '100%', borderTopRightRadius: 20, borderTopLeftRadius: 20, marginLeft: 0, height: 60, justifyContent: "center", alignItems: "center" }}>
-                                        <Text style={{ color: "#000", fontSize: 20, fontWeight: "bold" }}>Send Us your Query!</Text>
+                                        <Text style={{ color: "#000", fontSize: 20, fontWeight: "bold" }}>Ohereza </Text>
                                     </View>
-                                    <Text style={{ color: "#5c5c5c", fontSize: 18, fontWeight: "bold", textAlign: "center", marginTop: 10 }}>Pick Query Category</Text>
+                                    <Text style={{ color: "#5c5c5c", fontSize: 18, fontWeight: "bold", textAlign: "center", marginTop: 10 }}>Hitamo icyo ushaka kubazaho</Text>
                                     <View>
                                         <Picker
                                             mode='dropdown'
@@ -219,7 +219,7 @@ const Chat = ({ navigation }) => {
                                             numberOfLines={5}
                                             value={Message}
                                             multiline={true}
-                                            placeholder="Explain your query!"
+                                            placeholder="Sobanura Ikibazo Cyawe!"
                                             placeholderTextColor="#7d7d7d"
                                             style={{ borderRadius: 10, width: '90%', height: 100, margin: 20, padding: 20, color: "black", backgroundColor: "#f5f6fb" }}
                                             onChangeText={(val) => { setMessage(val) }} />
@@ -232,7 +232,7 @@ const Chat = ({ navigation }) => {
                                             <TouchableOpacity onPress={() => { setIsVisible(!isVisible) }}>
                                                 <View style={{ height: 50, width: 100, width: '100%', alignItems: 'center', justifyContent: 'center', borderRightColor: 'grey', borderRightWidth: 0.5 }}>
 
-                                                    <Text style={{ color: '#5c5c5c', fontSize: 20 }}>Cancel</Text>
+                                                    <Text style={{ color: '#5c5c5c', fontSize: 20 }}>hagarika</Text>
 
                                                 </View>
                                             </TouchableOpacity>
@@ -244,7 +244,7 @@ const Chat = ({ navigation }) => {
                                             <TouchableOpacity onPress={(e) => {handleSubmit(e);setIsVisible(!isVisible)}}>
                                                 <View style={{ height: 50, width: 100, width: '100%', alignItems: 'center', justifyContent: 'center' }}>
 
-                                                    <Text style={{ color: '#5c5c5c', fontSize: 20 }}>submit</Text>
+                                                    <Text style={{ color: '#5c5c5c', fontSize: 20 }}>Ohereza</Text>
                                                 </View>
                                             </TouchableOpacity>
 

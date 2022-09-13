@@ -63,7 +63,7 @@ const Guide = ({ navigation }) => {
 
                         ) : (
                             <View style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>
-                                <Text>No Imirire guide yet...</Text>
+                                <Text>Ntabutumwa burageramo kumirire</Text>
                             </View>
                         )
                     )}
@@ -91,7 +91,7 @@ const Guide = ({ navigation }) => {
 
                         ) : (
                             <View style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>
-                                <Text>No Imirire guide yet...</Text>
+                                <Text>Ntabutumwa burageramo kumikurire</Text>
                             </View>
                         )
                     )}
@@ -117,7 +117,7 @@ const Guide = ({ navigation }) => {
 
                         ) : (
                             <View style={{ marginLeft: 12, marginTop: 10, marginBottom: 10, color: "#707070" }}>
-                                <Text>No Isuku guide yet...</Text>
+                                <Text>Ntabutumwa burageramo kwisuku</Text>
                             </View>
                         )
                     )}

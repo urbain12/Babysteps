@@ -139,7 +139,7 @@ const ChangePassword = ({ navigation }) => {
 
                         <View style={styles.action}>
                             <TextInput
-                                placeholder="Enter old password"
+                                placeholder="Andika ijambo banga wakoreshaga"
                                 placeholderTextColor="#666666"
                                 secureTextEntry={securetext ? true : false}
                                 style={[styles.textInput, {
@@ -170,7 +170,7 @@ const ChangePassword = ({ navigation }) => {
                         </View>
                         <View style={styles.action}>
                             <TextInput
-                                placeholder="Enter new Password"
+                                placeholder="Andika ijambo banga rishya"
                                 placeholderTextColor="#666666"
                                 secureTextEntry={securetext1 ? true : false}
                                 style={[styles.textInput, {
@@ -201,7 +201,7 @@ const ChangePassword = ({ navigation }) => {
                         </View>
                         <View style={styles.action}>
                             <TextInput
-                                placeholder="Confirm new Password"
+                                placeholder="Emeza ijambo banga"
                                 placeholderTextColor="#666666"
                                 secureTextEntry={securetext2 ? true : false}
                                 style={[styles.textInput, {
@@ -247,7 +247,7 @@ const ChangePassword = ({ navigation }) => {
                             <ActivityIndicator size='large' color='white' style={{ marginTop: 10 }} />
                         ) :
                             (
-                                <Text style={{ color: "white", marginTop: 15, fontSize: 20, fontWeight: "bold" }}>Change</Text>
+                                <Text style={{ color: "white", marginTop: 15, fontSize: 20, fontWeight: "bold" }}>Hindura</Text>
                             )}
 
                     </View>

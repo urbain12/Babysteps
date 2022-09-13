@@ -141,7 +141,7 @@ const Home = ({ navigation }) => {
                     var diffDays = parseInt((end_date - start_date) / (1000 * 60 * 60 * 24))
                     // console.log(diffDays)
                     setDays(diffDays)
-                    console.log('niho bigitangura')
+                    console.log('niho bigitangira')
                 }
             }
             else {
@@ -170,7 +170,7 @@ const Home = ({ navigation }) => {
                     var diffDays = parseInt((end_date - start_date) / (1000 * 60 * 60 * 24))
                     // console.log(diffDays)
                     setDays(diffDays)
-                    console.log('niho bigitangura')
+                    console.log('niho bigitangira')
                 }
             }
             else {

@@ -39,7 +39,7 @@ const Settings = ({ navigation }) => {
             }}>
                 <View style={{ flexDirection: "row" }}>
                     <View style={{ width: "60%", alignItems: "flex-start", }}>
-                        <Text style={[styles.Title, { color: "#000",marginTop:20,fontSize:20 }]}>Settings</Text>
+                        <Text style={[styles.Title, { color: "#000",marginTop:20,fontSize:20 }]}>Imikorere</Text>
                     </View>
 
                 </View>

@@ -86,13 +86,13 @@ const Login = ({ navigation }) => {
 
                 <View style={{ marginTop: 20, alignItems: "center" }}>
 
-                    <Text style={{ fontWeight: "bold", marginTop: 10, fontSize: 20 }}>Sign in</Text>
+                    <Text style={{ fontWeight: "bold", marginTop: 10, fontSize: 20 }}>Injira</Text>
                 </View>
 
                 <View style={{ marginTop: 50, marginBottom: 15 }}>
 
-                    <Text style={{ fontSize: 20, fontWeight: "900", marginLeft: 25, letterSpacing: 2 }}>Let's get you in</Text>
-                    <Text style={{ fontSize: 15, marginLeft: 25 }}>Welcome, you have been missed</Text>
+                    <Text style={{ fontSize: 32, fontWeight: "900", marginLeft: 25, letterSpacing: 2 }}>Isaro</Text>
+                    <Text style={{ fontSize: 15, marginLeft: 25 }}>Intambwe z'umwana Wanjye</Text>
                 </View>
 
                 <View style={styles.Formcontainer}>
@@ -104,7 +104,7 @@ const Login = ({ navigation }) => {
                     />
 
                     <TextInput
-                        placeholder="Phone"
+                        placeholder="Telephone"
                         placeholderTextColor="#666666"
                         keyboardType='number-pad'
                         style={styles.textInput}
@@ -120,7 +120,7 @@ const Login = ({ navigation }) => {
                         style={[styles.icon, { marginLeft: 10 }]}
                     />
                     <TextInput
-                        placeholder="Password"
+                        placeholder="Ijambo banga"
                         placeholderTextColor="#666666"
                         secureTextEntry={securetext ? true : false}
                         style={styles.textInput}
@@ -149,7 +149,7 @@ const Login = ({ navigation }) => {
                 </View>
 
                 <TouchableOpacity onPress={() => { '' }}>
-                    <Text style={styles.forgotpass}>Forget Password?</Text>
+                    <Text style={styles.forgotpass}>Wibagiwe ijambo banga?</Text>
                 </TouchableOpacity>
 
                 <View style={{ marginTop: 30 }}>
@@ -165,7 +165,7 @@ const Login = ({ navigation }) => {
                                 <ActivityIndicator size='large' color='white' style={{ marginTop: 10 }} />
                             ) :
                                 (
-                                    <Text style={{ color: "white", marginTop: 10, fontSize: 20, fontWeight: "bold" }}>Login</Text>
+                                    <Text style={{ color: "white", marginTop: 10, fontSize: 20, fontWeight: "bold" }}>Injira</Text>
                                 )}
 
                         </View>
@@ -173,7 +173,7 @@ const Login = ({ navigation }) => {
                     <TouchableOpacity style={{ marginTop: 15, alignItems: "center" }}
                         onPress={() => navigation.navigate("Register")}
                     >
-                        <Text>Don't Have an account? <Text style={{ color: "#0096C7" }}>Create One</Text></Text>
+                        <Text>Nta Konti Ufite? <Text style={{ color: "#0096C7" }}>Fungura Konti</Text></Text>
                     </TouchableOpacity>
 
 

@@ -60,17 +60,17 @@ const Report = ({ navigation }) => {
                 borderBottomRightRadius: 15,
                 ...styles.shadow
             }}>
+                
                 <View style={{ flexDirection: "row" }}>
                     <View style={{ width: "60%", alignItems: "flex-start", }}>
-                        <Text style={[styles.Title, { color: "#000",marginTop:20,fontSize:20 }]}>Report</Text>
+                        <Text style={[styles.Title, { color: "#000",marginTop:20,fontSize:20 }]}>Raporo</Text>
                     </View>
 
                 </View>
             </View>
-
-
             <ScrollView>
-                {customer.takeVax !== ''?(
+           
+                {customer !== ''?(
                      <View style={styles.container} onPress={() => navigation.navigate("Chat")}>
                      <View style={{ flexDirection: "row", width: "100%", marginTop: 5,marginVertical:20 }}>
  
@@ -78,7 +78,7 @@ const Report = ({ navigation }) => {
                          </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Akivuka</Text>
+                             <Text style={styles.Title}>Akivuka:BCG&Polio 0</Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -94,7 +94,7 @@ const Report = ({ navigation }) => {
                      </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Ibyumweru Bitandatu</Text>
+                             <Text style={styles.Title}>Ukwezi n'igice: Polio dose 1&Pentavalent dose 1</Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -108,7 +108,7 @@ const Report = ({ navigation }) => {
                      </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Ibyumweru 10</Text>
+                             <Text style={styles.Title}>Amezi 2 n'igice: Polio dose 2&Pentavalent dose 2</Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -122,7 +122,7 @@ const Report = ({ navigation }) => {
                      </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Ibyumweru cumi nabine</Text>
+                             <Text style={styles.Title}>Amezi 3 n'igice: Polio dose 3&Pentavalent dose 3</Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -137,7 +137,7 @@ const Report = ({ navigation }) => {
                      </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Amezi icyenda</Text>
+                             <Text style={styles.Title}>Amezi 9:Iseru&Rubeole</Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -151,7 +151,7 @@ const Report = ({ navigation }) => {
                      </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Amezi cumi natanu</Text>
+                             <Text style={styles.Title}>Umwaka n'amezi3:Iseru&Rubeole</Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
