@@ -78,7 +78,7 @@ const Report = ({ navigation }) => {
                          </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Akivuka:BCG&Polio 0</Text>
+                             <Text style={styles.Title}>Akivuka:Urw'igituntu urushinge&Imbasa ibitonyanga </Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -94,7 +94,7 @@ const Report = ({ navigation }) => {
                      </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Ukwezi n'igice: Polio dose 1&Pentavalent dose 1</Text>
+                             <Text style={styles.Title}>Ukwezi n'igice: URWIMBASA urushinge</Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -108,7 +108,7 @@ const Report = ({ navigation }) => {
                      </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Amezi 2 n'igice: Polio dose 2&Pentavalent dose 2</Text>
+                             <Text style={styles.Title}>Amezi 2 n'igice: Urwa kokorishi,agakwega,akaniga,HIB,Hepatite B</Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -122,7 +122,7 @@ const Report = ({ navigation }) => {
                      </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Amezi 3 n'igice: Polio dose 3&Pentavalent dose 3</Text>
+                             <Text style={styles.Title}>Amezi 3 n'igice:Pinemokoke </Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -137,7 +137,7 @@ const Report = ({ navigation }) => {
                      </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Amezi 9:Iseru&Rubeole</Text>
+                             <Text style={styles.Title}>Amezi 9:Iseru&Rubeyole</Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
@@ -151,7 +151,7 @@ const Report = ({ navigation }) => {
                      </View>
  
                          <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                             <Text style={styles.Title}>Umwaka n'amezi3:Iseru&Rubeole</Text>
+                             <Text style={styles.Title}>Umwaka n'amezi3:Iseru&Rubeyole</Text>
                          </TouchableOpacity>
  
                          <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
