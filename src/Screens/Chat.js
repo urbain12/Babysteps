@@ -49,7 +49,7 @@ const Chat = ({ navigation }) => {
         LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
         async function setInfo2() {
             const id = await AsyncStorage.getItem('user_id')
-            axios.get(`https://isarovaccine.herokuapp.com/Queriesbyid/${id}`).then((res) => {
+            axios.get(`https://hidden-wave-73473.herokuapp.com/Queriesbyid/${id}`).then((res) => {
                 setResponses(res.data)
                 // console.log(res.data)
             }).catch(err => {
@@ -73,7 +73,7 @@ const Chat = ({ navigation }) => {
 
             const id = await AsyncStorage.getItem('user_id')
             setMyID(id)
-            axios.get(`https://isarovaccine.herokuapp.com/getchildbyid/${id}`).then((res) => {
+            axios.get(`https://hidden-wave-73473.herokuapp.com/getchildbyid/${id}`).then((res) => {
                 setCustomer(res.data[0])
             }).catch(err => {
                 console.log(err)
@@ -108,7 +108,7 @@ const Chat = ({ navigation }) => {
             // Authorization: `Token ${my_token}`,
         };
 
-        axios.post('https://isarovaccine.herokuapp.com/CreateQuery/', postObj).then((res) => {
+        axios.post('https://hidden-wave-73473.herokuapp.com/CreateQuery/', postObj).then((res) => {
             console.log(res.status)
             alert('Your request is submitted')
             navigation.navigate('Chat')

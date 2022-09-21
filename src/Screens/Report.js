@@ -26,7 +26,7 @@ const Report = ({ navigation }) => {
         async function setInfo() {
 
             const id = await AsyncStorage.getItem('user_id')
-            axios.get(`https://isarovaccine.herokuapp.com/getchildbyid/${id}`).then((res) => {
+            axios.get(`https://hidden-wave-73473.herokuapp.com/getchildbyid/${id}`).then((res) => {
                 setCustomer(res.data[0])
                 console.log("hello",res.data[0])
             }).catch(err => {
