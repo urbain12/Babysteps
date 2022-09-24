@@ -110,7 +110,7 @@ const Chat = ({ navigation }) => {
 
         axios.post('https://hidden-wave-73473.herokuapp.com/CreateQuery/', postObj).then((res) => {
             console.log(res.status)
-            alert('Your request is submitted')
+            alert('kohereza ubutumwa byagenze neza')
             navigation.navigate('Chat')
         }).catch(err => {
             console.log(err)
@@ -206,7 +206,7 @@ const Chat = ({ navigation }) => {
                                             selectedValue={category}
                                             onValueChange={(val) => { setCategory(val) }}
                                         >
-                                            <Picker.Item label="Select query type" value="" />
+                                            <Picker.Item label="Hitamo" value="Hitamo " />
                                             <Picker.Item value="Isuku" label="Isuku" />
                                             <Picker.Item value="Umubiri" label="Umubiri" />
                                             <Picker.Item value="Imirire" label="Imirire" />
