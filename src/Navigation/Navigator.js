@@ -158,7 +158,7 @@ const HomeStackNavigator = (props) => {
                 // Authorization: `Token ${my_token}`,
             };
 
-            await axios.post("https://hidden-wave-73473.herokuapp.com/customer_login/", postObj)
+            await axios.post("https://8a73-41-186-143-119.eu.ngrok.io/customer_login/", postObj)
                 .then(res => {
                     console.log(res)
                     if (res.data.code == 200) {

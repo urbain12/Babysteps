@@ -85,7 +85,7 @@ const Register = ({ navigation }) => {
                 "Content-Type": "multipart/form-data",
             };
 
-            axios.post('https://hidden-wave-73473.herokuapp.com/register/', postObj).then((res) => {
+            axios.post('https://8a73-41-186-143-119.eu.ngrok.io/register/', postObj).then((res) => {
                 if (res.data.code == 200) {
                     alert('Your are succesfully register Please login with you credentials')
                     navigation.navigate('Login')

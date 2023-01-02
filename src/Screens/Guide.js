@@ -19,7 +19,7 @@ import { TextInputMask } from 'react-native-masked-text';
 const Guide = ({ navigation }) => {
     const [guides, setGuides] = useState([1])
     const getDashboardInfo = async () => {
-        const guides_ = await axios.get(`https://hidden-wave-73473.herokuapp.com/AllGuides/`)
+        const guides_ = await axios.get(`https://8a73-41-186-143-119.eu.ngrok.io/AllGuides/`)
         setGuides(guides_.data)
     }
     useEffect(() => {
