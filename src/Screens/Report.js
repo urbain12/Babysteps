@@ -26,7 +26,7 @@ const Report = ({ navigation }) => {
         async function setInfo() {
 
             const id = await AsyncStorage.getItem('user_id')
-            axios.get(`https://8a73-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
+            axios.get(`https://a645-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
                 setCustomer(res.data[0])
                 console.log("hello",res.data[0])
             }).catch(err => {
@@ -54,7 +54,7 @@ const Report = ({ navigation }) => {
             <View style={{
                 height: 100,
                 paddingTop: 20,
-                backgroundColor: '#e9ecef',
+                backgroundColor: '#219ebc',
                 justifyContent: "center",
                 borderBottomLeftRadius: 15,
                 borderBottomRightRadius: 15,
@@ -63,7 +63,7 @@ const Report = ({ navigation }) => {
                 
                 <View style={{ flexDirection: "row" }}>
                     <View style={{ width: "60%", alignItems: "flex-start", }}>
-                        <Text style={[styles.Title, { color: "#000",marginTop:20,fontSize:20 }]}>Raporo</Text>
+                        <Text style={[styles.Title, { color: "#fff",marginTop:20,fontSize:20,fontWeight:"bold" }]}>Raporo</Text>
                     </View>
 
                 </View>
@@ -170,30 +170,30 @@ const Report = ({ navigation }) => {
 
 
 
-            <View style={{ backgroundColor: "#e9ecef", height: 90, flexDirection: "row", alignItems: "center", borderTopRightRadius: 20, borderTopLeftRadius: 20 }}>
+            <View style={{ backgroundColor: "#219ebc", height: 90, flexDirection: "row", alignItems: "center", borderTopRightRadius: 10, borderTopLeftRadius: 10, shadowColor: '#999', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 2, shadowRadius: 5, elevation: 5, }}>
 
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", width: "30%", justifyContent: "center", alignItems: "center" }}
                     onPress={() => navigation.navigate("Home")}>
 
-                    <AntDesign name="home" size={30} color="#05375a" />
+                    <Entypo name="home" size={30} color="#fff" />
                 </TouchableOpacity>
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", justifyContent: "center", alignItems: "center", width: "40%" }}
-                onPress={() => navigation.navigate("Guide")}
+                    onPress={() => navigation.navigate("Report")}
                 >
 
-                    <Feather name="book-open" size={30} color="#05375a" />
+                    <MaterialIcons name="table-chart" size={30} color="#023047" />
                 </TouchableOpacity>
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", justifyContent: "center", alignItems: "center", width: "30%" }}
-                onPress={() => navigation.navigate("Settings")}
+                    onPress={() => navigation.navigate("Settings")}
                 >
 
-                    <AntDesign name="setting" size={30} color="#05375a" />
+                    <Ionicons name="settings" size={30} color="#fff" />
                 </TouchableOpacity>
             </View>
         </>

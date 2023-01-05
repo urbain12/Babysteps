@@ -10,7 +10,7 @@ import {
     ScrollView,
     TextInput,
 } from "react-native";
-import { MaterialCommunityIcons, FontAwesome5, FontAwesome,Feather, Ionicons, Entypo, AntDesign,MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, FontAwesome5, FontAwesome, Feather, Ionicons, Entypo, AntDesign, MaterialIcons } from "@expo/vector-icons";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../context/context';
 
@@ -31,7 +31,7 @@ const Settings = ({ navigation }) => {
             <View style={{
                 height: 100,
                 paddingTop: 20,
-                backgroundColor: '#e9ecef',
+                backgroundColor: '#219ebc',
                 justifyContent: "center",
                 borderBottomLeftRadius: 15,
                 borderBottomRightRadius: 15,
@@ -39,7 +39,7 @@ const Settings = ({ navigation }) => {
             }}>
                 <View style={{ flexDirection: "row" }}>
                     <View style={{ width: "60%", alignItems: "flex-start", }}>
-                        <Text style={[styles.Title, { color: "#000",marginTop:20,fontSize:20 }]}>Imikorere</Text>
+                        <Text style={[styles.Title, { color: "#fff", marginTop: 20, fontSize: 20, fontWeight: "bold" }]}>Imikorere</Text>
                     </View>
 
                 </View>
@@ -47,68 +47,68 @@ const Settings = ({ navigation }) => {
 
 
             <ScrollView>
+                <TouchableOpacity style={styles.container} onPress={() => navigation.navigate("Guide")}>
+                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
+
+                        <View style={{ width: "15%", alignItems: "center", marginTop: 10 }}>
+                        <AntDesign name="profile" size={30} color="#adb5bd" />
+                        </View>
+
+                        <View style={{ width: "75%", marginLeft: -15, marginTop: 5 }}>
+                            <Text style={styles.Title}>Umwirondoro</Text>
+                        </View>
+
+                        <View style={{ width: "10%", alignItems: "center", marginTop: 10 }}>
+                            <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
+                        </View>
+
+                    </View>
+                </TouchableOpacity>
                 <TouchableOpacity style={styles.container} onPress={() => navigation.navigate("Chat")}>
                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
 
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
+                        <View style={{ width: "15%", alignItems: "center", marginTop: 10 }}>
                             <Entypo name="chat" size={30} color="#adb5bd" />
                         </View>
 
-                        <TouchableOpacity  style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                        <TouchableOpacity style={{ width: "75%", marginLeft: -15, marginTop: 5 }}>
                             <Text style={styles.Title}>Kuganira</Text>
                         </TouchableOpacity>
 
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                        <View style={{ width: "10%", alignItems: "center", marginTop: 10 }}>
                             <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
                         </View>
 
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.container}onPress={() => navigation.navigate("Report")}>
-                    <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
-
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialCommunityIcons name="book" size={30} color="#adb5bd" />
-                        </View>
-
-                        <View style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
-                            <Text style={styles.Title}>Raporo</Text>
-                        </View>
-
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
-                            <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
-                        </View>
-
-                    </View>
-                </TouchableOpacity>
                 <TouchableOpacity style={styles.container} >
                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
 
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
+                        <View style={{ width: "15%", alignItems: "center", marginTop: 10 }}>
                             <MaterialCommunityIcons name="onepassword" size={30} color="#adb5bd" />
                         </View>
 
-                        <TouchableOpacity onPress={() => navigation.navigate("ChangePassword")} style={{ width: "75%", marginLeft: -15,marginTop: 5}}>
+                        <TouchableOpacity onPress={() => navigation.navigate("ChangePassword")} style={{ width: "75%", marginLeft: -15, marginTop: 5 }}>
                             <Text style={styles.Title}>Hindura ijambo banga</Text>
                         </TouchableOpacity>
 
-                        <View style={{ width: "10%", alignItems: "center",marginTop: 10 }}>
+                        <View style={{ width: "10%", alignItems: "center", marginTop: 10 }}>
                             <MaterialIcons name="keyboard-arrow-right" size={30} color="#adb5bd" />
                         </View>
 
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.container,{marginBottom:50}]} 
-                onPress={() => context.signOut()}
+                <TouchableOpacity style={[styles.container, { marginBottom: 50 }]}
+                    onPress={() => context.signOut()}
                 >
                     <View style={{ flexDirection: "row", width: "100%", marginTop: 5 }}>
 
-                        <View style={{ width: "15%", alignItems: "center",marginTop: 10 }}>
+                        <View style={{ width: "15%", alignItems: "center", marginTop: 10 }}>
                             <AntDesign name="logout" size={30} color="red" />
                         </View>
 
-                        <View style={{ width: "85%", marginLeft: -15,marginTop: 5}}>
+                        <View style={{ width: "85%", marginLeft: -15, marginTop: 5 }}>
                             <Text style={styles.Title}>Sohoka</Text>
                         </View>
 
@@ -119,30 +119,33 @@ const Settings = ({ navigation }) => {
 
 
 
-            <View style={{ backgroundColor: "#e9ecef", height: 90, flexDirection: "row", alignItems: "center", borderTopRightRadius: 20, borderTopLeftRadius: 20 }}>
+            <View style={{ width: "100%", textAlign: "center", alignContent: "center", alignItems: "center", marginBottom: 15 }}>
+                <Text style={styles.Title}>Version 1.0</Text>
+            </View>
+            <View style={{ backgroundColor: "#219ebc", height: 90, flexDirection: "row", alignItems: "center", borderTopRightRadius: 10, borderTopLeftRadius: 10, shadowColor: '#999', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 2, shadowRadius: 5, elevation: 5, }}>
 
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", width: "30%", justifyContent: "center", alignItems: "center" }}
                     onPress={() => navigation.navigate("Home")}>
 
-                    <AntDesign name="home" size={30} color="#05375a" />
+                    <Entypo name="home" size={30} color="#fff" />
                 </TouchableOpacity>
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", justifyContent: "center", alignItems: "center", width: "40%" }}
-                onPress={() => navigation.navigate("Guide")}
+                    onPress={() => navigation.navigate("Report")}
                 >
 
-                    <Feather name="book-open" size={30} color="#05375a" />
+                    <MaterialIcons name="table-chart" size={30} color="#fff" />
                 </TouchableOpacity>
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", justifyContent: "center", alignItems: "center", width: "30%" }}
-                onPress={() => navigation.navigate("Settings")}
+                    onPress={() => navigation.navigate("Settings")}
                 >
 
-                    <AntDesign name="setting" size={30} color="#05375a" />
+                    <Ionicons name="settings" size={30} color="#023047" />
                 </TouchableOpacity>
             </View>
         </>
@@ -164,7 +167,7 @@ const styles = StyleSheet.create({
 
     },
     Title: {
-         
+
         fontSize: 16,
         fontWeight: "bold",
         marginHorizontal: 15,
@@ -172,7 +175,7 @@ const styles = StyleSheet.create({
         color: "#05375a"
     },
     Texties: {
-         
+
         fontSize: 12,
         fontWeight: "normal",
         marginHorizontal: 15,

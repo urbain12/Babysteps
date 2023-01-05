@@ -170,11 +170,11 @@ const Login = ({ navigation }) => {
 
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{ marginTop: 15, alignItems: "center" }}
+                    {/* <TouchableOpacity style={{ marginTop: 15, alignItems: "center" }}
                         onPress={() => navigation.navigate("Register")}
                     >
                         <Text>Nta Konti Ufite? <Text style={{ color: "#0096C7" }}>Fungura Konti</Text></Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
 
 
                 </View>

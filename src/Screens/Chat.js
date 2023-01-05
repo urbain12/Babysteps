@@ -49,7 +49,7 @@ const Chat = ({ navigation }) => {
         LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
         async function setInfo2() {
             const id = await AsyncStorage.getItem('user_id')
-            axios.get(`https://8a73-41-186-143-119.eu.ngrok.io/Queriesbyid/${id}`).then((res) => {
+            axios.get(`https://a645-41-186-143-119.eu.ngrok.io/Queriesbyid/${id}`).then((res) => {
                 setResponses(res.data)
                 // console.log(res.data)
             }).catch(err => {
@@ -73,7 +73,7 @@ const Chat = ({ navigation }) => {
 
             const id = await AsyncStorage.getItem('user_id')
             setMyID(id)
-            axios.get(`https://8a73-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
+            axios.get(`https://a645-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
                 setCustomer(res.data[0])
             }).catch(err => {
                 console.log(err)
@@ -108,9 +108,8 @@ const Chat = ({ navigation }) => {
             // Authorization: `Token ${my_token}`,
         };
 
-        axios.post('https://8a73-41-186-143-119.eu.ngrok.io/CreateQuery/', postObj).then((res) => {
+        axios.post('https://a645-41-186-143-119.eu.ngrok.io/CreateQuery/', postObj).then((res) => {
             console.log(res.status)
-            alert('kohereza ubutumwa byagenze neza')
             navigation.navigate('Chat')
         }).catch(err => {
             console.log(err)
@@ -124,7 +123,7 @@ const Chat = ({ navigation }) => {
 
         <View style={{ flex: 1, backgroundColor: 'white' }}>
             <StatusBar backgroundColor='#0A2133' barStyle="light-content" />
-            <View style={{ width: windowWidth, backgroundColor: '#0A2133', height: windowHeight / 8, flexDirection: 'row' }}>
+            <View style={{ width: windowWidth, backgroundColor: '#219ebc', height: windowHeight / 8, flexDirection: 'row' }}>
 
                 <TouchableOpacity onPress={() => { navigation.goBack() }} style={{ width: '25%', alignItems: 'center', justifyContent: 'center', marginTop: '8%' }}>
                     <Ionicons name="arrow-back" size={24} color="white" />

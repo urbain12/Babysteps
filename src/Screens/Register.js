@@ -85,7 +85,7 @@ const Register = ({ navigation }) => {
                 "Content-Type": "multipart/form-data",
             };
 
-            axios.post('https://8a73-41-186-143-119.eu.ngrok.io/register/', postObj).then((res) => {
+            axios.post('https://a645-41-186-143-119.eu.ngrok.io/register/', postObj).then((res) => {
                 if (res.data.code == 200) {
                     alert('Your are succesfully register Please login with you credentials')
                     navigation.navigate('Login')
@@ -106,215 +106,221 @@ const Register = ({ navigation }) => {
 
 
     return (
-
+        // onPress={() => navigation.goBack()}
         <>
 
 
             <StatusBar barStyle='dark-content' backgroundColor="#000000" hidden={false} translucent={true} />
-                <KeyboardAvoidingView  style={styles.container} behavior='position'>
+            <KeyboardAvoidingView style={styles.container} behavior='position'>
 
-                <View style={{ marginTop: 20, alignItems: "center" }}>
-
-                    <Text style={{ fontWeight: "bold", marginTop: 10, fontSize: 20 }}>Uzuza Imyirondoro</Text>
+                <View style={{ marginTop: 20, alignItems: "center", flexDirection: "row" }}>
+                    <TouchableOpacity style={{ width: "20%", alignItems: "flex-end", marginTop: 10, marginLeft: -20 }}
+                        onPress={() => navigation.goBack()}>
+                            <Ionicons name="arrow-back" size={30} color="#000" />
+                    </TouchableOpacity>
+                    
+                    <View style={{ width: "80%",alignItems:"center"}}>
+                        <Text style={{ fontWeight: "bold", marginTop: 10, fontSize: 20 }}>Uzuza Imyirondoro</Text>
+                    </View>
                 </View>
 
-                    <ScrollView>
-                        <View style={styles.Formcontainer}>
-                            <TextInput
-                                placeholder="Izina"
-                                placeholderTextColor="#666666"
-                                style={styles.textInput}
-                                autoCapitalize="none"
-                                onChangeText={text => setFirstName(text)}
-                            />
-                        </View>
-                        <View style={styles.Formcontainer}>
-                            <TextInput
-                                placeholder="Izina ryakabiri"
-                                placeholderTextColor="#666666"
-                                style={styles.textInput}
-                                autoCapitalize="none"
-                                onChangeText={text => setLastName(text)}
-                            />
-                        </View>
+                <ScrollView>
+                    <View style={styles.Formcontainer}>
+                        <TextInput
+                            placeholder="Izina"
+                            placeholderTextColor="#666666"
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            onChangeText={text => setFirstName(text)}
+                        />
+                    </View>
+                    <View style={styles.Formcontainer}>
+                        <TextInput
+                            placeholder="Izina ryakabiri"
+                            placeholderTextColor="#666666"
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            onChangeText={text => setLastName(text)}
+                        />
+                    </View>
 
-                        <View style={styles.Formcontainer}>
-                            <TextInput
-                                placeholder="Izina rya nyina"
-                                placeholderTextColor="#666666"
-                                style={styles.textInput}
-                                autoCapitalize="none"
-                                onChangeText={text => setMName(text)}
-                            />
-                        </View>
+                    <View style={styles.Formcontainer}>
+                        <TextInput
+                            placeholder="Izina rya nyina"
+                            placeholderTextColor="#666666"
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            onChangeText={text => setMName(text)}
+                        />
+                    </View>
 
-                        <View style={styles.Formcontainer}>
-                            <TextInput
-                                placeholder="Izina rya se"
-                                placeholderTextColor="#666666"
-                                style={styles.textInput}
-                                autoCapitalize="none"
-                                onChangeText={text => setFName(text)}
-                            />
-                        </View>
-                        
+                    <View style={styles.Formcontainer}>
+                        <TextInput
+                            placeholder="Izina rya se"
+                            placeholderTextColor="#666666"
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            onChangeText={text => setFName(text)}
+                        />
+                    </View>
 
-                        <Text style={{ marginTop: 3, fontSize: 14, marginLeft: 25 }}>Itariki Yamavuko</Text>
-                        <View style={{ flexDirection: "row", marginHorizontal: 15 }}>
+
+                    <Text style={{ marginTop: 3, fontSize: 14, marginLeft: 25 }}>Itariki Yamavuko</Text>
+                    <View style={{ flexDirection: "row", marginHorizontal: 15 }}>
+                        <View
+                            style={{
+                                width: '33%',
+                                marginTop: 0,
+                                borderColor: 'black',
+                                borderRadius: 10,
+                            }}>
+
+                            <Picker
+                                selectedValue={year}
+                                onValueChange={(val) => { setYear(val) }}>
+                                <Picker.Item label={JSON.stringify(new Date().getFullYear())} value={JSON.stringify(new Date().getFullYear())} />
+                                <Picker.Item label={JSON.stringify(new Date().getFullYear() - 1)} value={JSON.stringify(new Date().getFullYear() - 1)} />
+                                <Picker.Item label={JSON.stringify(new Date().getFullYear() - 2)} value={JSON.stringify(new Date().getFullYear() - 2)} />
+                                <Picker.Item label={JSON.stringify(new Date().getFullYear() - 3)} value={JSON.stringify(new Date().getFullYear() - 3)} />
+
+                            </Picker>
+                        </View>
+                        <View
+                            style={{
+                                width: '33%',
+                                marginTop: 0,
+                                borderColor: 'black',
+                                borderRadius: 10,
+                            }}>
+                            <Picker
+                                selectedValue={month}
+                                onValueChange={(val) => { setMonth(val) }}>
+                                <Picker.Item value="01" label="January" />
+                                <Picker.Item value="02" label="February" />
+                                <Picker.Item value="03" label="March" />
+                                <Picker.Item value="04" label="April" />
+                                <Picker.Item value="05" label="May" />
+                                <Picker.Item value="06" label="June" />
+                                <Picker.Item value="07" label="July" />
+                                <Picker.Item value="07" label="August" />
+                                <Picker.Item value="08" label="September" />
+                                <Picker.Item value="10" label="October" />
+                                <Picker.Item value="11" label="November" />
+                                <Picker.Item value="12" label="December" />
+
+                            </Picker>
+                        </View>
+                        <View
+                            style={{
+                                width: '33%',
+                                marginTop: 0,
+                                borderColor: 'black',
+                                borderRadius: 10,
+
+                            }}>
+                            <Picker
+                                selectedValue={days}
+                                onValueChange={(val) => { setdays(val) }}>
+                                {Array.from({ length: 31 }, (_, index) => index + 1).map((element) => {
+                                    return (
+                                        <Picker.Item label={addDigit(element)} value={addDigit(element)} />
+                                    )
+                                })}
+                            </Picker>
+                        </View>
+                    </View>
+
+
+
+                    <View style={styles.Formcontainer}>
+                        <TextInput
+                            placeholder="Ibiro yavukanye"
+                            placeholderTextColor="#666666"
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            onChangeText={(val) => setWeight(val)}
+                        />
+                    </View>
+                    <View style={styles.Formcontainer}>
+                        <TextInput
+                            placeholder="Uburebure yavukanye"
+                            placeholderTextColor="#666666"
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            onChangeText={(val) => setHeight(val)}
+                        />
+                    </View>
+                    <View style={styles.Formcontainer}>
+                        <TextInput
+                            placeholder="Phone"
+                            placeholderTextColor="#666666"
+                            keyboardType='number-pad'
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            onChangeText={(val) => setphone(val)}
+                        />
+                    </View>
+                    <View style={styles.Formcontainer}>
+                        <TextInput
+                            placeholder="email"
+                            placeholderTextColor="#666666"
+                            keyboardType='email-address'
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            onChangeText={(val) => setemail(val)}
+                        />
+                    </View>
+
+                    <View style={styles.Formcontainer}>
+                        <TextInput
+                            placeholder="Password"
+                            placeholderTextColor="#666666"
+                            secureTextEntry={securetext ? true : false}
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            onChangeText={(val) => setPassword(val)}
+                        />
+                        <TouchableOpacity
+                            onPress={updateSecureTextEntry}>
+                            {securetext ?
+
+                                <Icon
+                                    name="eye-with-line"
+                                    color="grey"
+                                    size={20}
+                                    style={[styles.icon, { marginRight: 10, color: "#05375a" }]}
+                                />
+                                :
+                                <Icon
+                                    name="eye"
+                                    color="black"
+                                    size={20}
+                                    style={[styles.icon, { marginRight: 10, color: "#05375a" }]}
+                                />
+                            }
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{ marginTop: 30, marginBottom: 70 }}>
+                        <TouchableOpacity
+                            style={styles.signIn}
+                            onPress={(e) => {
+                                handleSubmit(e)
+                            }}>
                             <View
-                                style={{
-                                    width: '33%',
-                                    marginTop: 0,
-                                    borderColor: 'black',
-                                    borderRadius: 10,
-                                }}>
+                                style={{ backgroundColor: "#0096C7", width: "115%", height: "100%", alignItems: "center", borderRadius: 10 }}
+                            >
+                                {loading ? (
+                                    <ActivityIndicator size='large' color='white' style={{ marginTop: 10 }} />
+                                ) :
+                                    (
+                                        <Text style={{ color: "white", marginTop: 10, fontSize: 20, fontWeight: "bold" }}>Iyandikishe</Text>
+                                    )}
 
-                                <Picker
-                                    selectedValue={year}
-                                    onValueChange={(val) => { setYear(val) }}>
-                                    <Picker.Item label={JSON.stringify(new Date().getFullYear())} value={JSON.stringify(new Date().getFullYear())} />
-                                    <Picker.Item label={JSON.stringify(new Date().getFullYear() - 1)} value={JSON.stringify(new Date().getFullYear() - 1)} />
-                                    <Picker.Item label={JSON.stringify(new Date().getFullYear() - 2)} value={JSON.stringify(new Date().getFullYear() - 2)} />
-                                    <Picker.Item label={JSON.stringify(new Date().getFullYear() - 3)} value={JSON.stringify(new Date().getFullYear() - 3)} />
-
-                                </Picker>
                             </View>
-                            <View
-                                style={{
-                                    width: '33%',
-                                    marginTop: 0,
-                                    borderColor: 'black',
-                                    borderRadius: 10,
-                                }}>
-                                <Picker
-                                    selectedValue={month}
-                                    onValueChange={(val) => { setMonth(val) }}>
-                                    <Picker.Item value="01" label="January" />
-                                    <Picker.Item value="02" label="February" />
-                                    <Picker.Item value="03" label="March" />
-                                    <Picker.Item value="04" label="April" />
-                                    <Picker.Item value="05" label="May" />
-                                    <Picker.Item value="06" label="June" />
-                                    <Picker.Item value="07" label="July" />
-                                    <Picker.Item value="07" label="August" />
-                                    <Picker.Item value="08" label="September" />
-                                    <Picker.Item value="10" label="October" />
-                                    <Picker.Item value="11" label="November" />
-                                    <Picker.Item value="12" label="December" />
-
-                                </Picker>
-                            </View>
-                            <View
-                                style={{
-                                    width: '33%',
-                                    marginTop: 0,
-                                    borderColor: 'black',
-                                    borderRadius: 10,
-
-                                }}>
-                                <Picker
-                                    selectedValue={days}
-                                    onValueChange={(val) => { setdays(val) }}>
-                                    {Array.from({ length: 31 }, (_, index) => index + 1).map((element) => {
-                                        return (
-                                            <Picker.Item label={addDigit(element)} value={addDigit(element)} />
-                                        )
-                                    })}
-                                </Picker>
-                            </View>
-                        </View>
-
-
-
-                        <View style={styles.Formcontainer}>
-                            <TextInput
-                                placeholder="Ibiro yavukanye"
-                                placeholderTextColor="#666666"
-                                style={styles.textInput}
-                                autoCapitalize="none"
-                                onChangeText={(val) => setWeight(val)}
-                            />
-                        </View>
-                        <View style={styles.Formcontainer}>
-                            <TextInput
-                                placeholder="Uburebure yavukanye"
-                                placeholderTextColor="#666666"
-                                style={styles.textInput}
-                                autoCapitalize="none"
-                                onChangeText={(val) => setHeight(val)}
-                            />
-                        </View>
-                        <View style={styles.Formcontainer}>
-                            <TextInput
-                                placeholder="Phone"
-                                placeholderTextColor="#666666"
-                                keyboardType='number-pad'
-                                style={styles.textInput}
-                                autoCapitalize="none"
-                                onChangeText={(val) => setphone(val)}
-                            />
-                        </View>
-                        <View style={styles.Formcontainer}>
-                            <TextInput
-                                placeholder="email"
-                                placeholderTextColor="#666666"
-                                keyboardType='email-address'
-                                style={styles.textInput}
-                                autoCapitalize="none"
-                                onChangeText={(val) => setemail(val)}
-                            />
-                        </View>
-
-                        <View style={styles.Formcontainer}>
-                            <TextInput
-                                placeholder="Password"
-                                placeholderTextColor="#666666"
-                                secureTextEntry={securetext ? true : false}
-                                style={styles.textInput}
-                                autoCapitalize="none"
-                                onChangeText={(val) => setPassword(val)}
-                            />
-                            <TouchableOpacity
-                                onPress={updateSecureTextEntry}>
-                                {securetext ?
-
-                                    <Icon
-                                        name="eye-with-line"
-                                        color="grey"
-                                        size={20}
-                                        style={[styles.icon, { marginRight: 10, color: "#05375a" }]}
-                                    />
-                                    :
-                                    <Icon
-                                        name="eye"
-                                        color="black"
-                                        size={20}
-                                        style={[styles.icon, { marginRight: 10, color: "#05375a" }]}
-                                    />
-                                }
-                            </TouchableOpacity>
-                        </View>
-                        <View style={{ marginTop: 30,marginBottom:70 }}>
-                            <TouchableOpacity
-                                style={styles.signIn}
-                                onPress={(e) => {
-                                    handleSubmit(e)
-                                }}>
-                                <View
-                                    style={{ backgroundColor: "#0096C7", width: "115%", height: "100%", alignItems: "center", borderRadius: 10 }}
-                                >
-                                    {loading ? (
-                                        <ActivityIndicator size='large' color='white' style={{ marginTop: 10 }} />
-                                    ) :
-                                        (
-                                            <Text style={{ color: "white", marginTop: 10, fontSize: 20, fontWeight: "bold" }}>Iyandikishe</Text>
-                                        )}
-
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                    </ScrollView>
-                </KeyboardAvoidingView>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
+            </KeyboardAvoidingView>
 
         </>
     );

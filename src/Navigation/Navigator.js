@@ -9,7 +9,6 @@ import Home from '../Screens/Home';
 import Guide from '../Screens/Guide';
 import Settings from '../Screens/Settings';
 import Register from '../Screens/Register';
-import FullGuide  from '../Screens/FullGuide';
 import Chat from '../Screens/Chat';
 import ChangePassword from '../Screens/ChangePassword';
 import Report from '../Screens/Report'
@@ -158,7 +157,7 @@ const HomeStackNavigator = (props) => {
                 // Authorization: `Token ${my_token}`,
             };
 
-            await axios.post("https://8a73-41-186-143-119.eu.ngrok.io/customer_login/", postObj)
+            await axios.post("https://a645-41-186-143-119.eu.ngrok.io/customer_login/", postObj)
                 .then(res => {
                     console.log(res)
                     if (res.data.code == 200) {
@@ -286,7 +285,6 @@ const HomeStackNavigator = (props) => {
                         <Stack.Screen name="Chat" component={Chat} />
                         <Stack.Screen name="ChangePassword" component={ChangePassword} />
                         <Stack.Screen name="Guide" component={Guide} />
-                        <Stack.Screen name="FullGuide" component={FullGuide} />
                         <Stack.Screen name="Settings" component={Settings} />
                         <Stack.Screen name="Report" component={Report} />
                     </Stack.Navigator>

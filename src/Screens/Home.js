@@ -20,7 +20,7 @@ const Home = ({ navigation }) => {
     const [days, setDays] = useState('null')
     const [customer, setCustomer] = useState('')
 
- 
+
     const format = (amount) => {
         return Number(amount)
             .toFixed(2)
@@ -32,7 +32,7 @@ const Home = ({ navigation }) => {
         async function setInfo() {
 
             const id = await AsyncStorage.getItem('user_id')
-            axios.get(`https://8a73-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
+            axios.get(`https://a645-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
                 setCustomer(res.data[0])
                 if (res.data[0].DOB != null) {
                     getVaccineDay(res.data[0].DOB)
@@ -191,27 +191,25 @@ const Home = ({ navigation }) => {
         <>
             <StatusBar backgroundColor="#00bcd4" translucent={false} hidden={false} barStyle="dark-content" />
             <View style={{
-                height: 100,
-                paddingTop: 20,
-                backgroundColor: '#e9ecef',
-                justifyContent: "center",
+                height: "25%",
+                paddingTop: 40,
+                backgroundColor: '#219ebc',
+                borderBottomLeftRadius: 80,
                 ...styles.shadow
             }}>
                 <View style={{ flexDirection: "row" }}>
-                    <TouchableOpacity style={{ width: "20%", alignItems: "center", marginTop: 10 }}>
+                    <TouchableOpacity style={{ width: "20%", alignItems: "center" }}>
                         <Image style={{ height: 50, width: 50, borderRadius: 30 }} source={require('../Images/profile.jpeg')} />
                     </TouchableOpacity>
 
-                    <View style={{ width: "60%", alignItems: "flex-start", marginTop: 10 }}>
-                        <Text style={[styles.Title, { color: "#05375a" }]}>{customer && customer.FirstName}</Text>
-                        <Text style={[styles.Texties, { color: "black" }]}>{customer && customer.DOB}</Text>
+                    <View style={{ width: "60%", alignItems: "flex-start" }}>
+                        <Text style={[styles.Title, { color: "#fff" }]}>{customer && customer.FirstName} {customer && customer.LastName}</Text>
+                        <Text style={[styles.Texties, { color: "white", marginLeft: 3, fontWeight: "bold" }]}>{customer && customer.DOB}</Text>
                     </View>
 
-                    <TouchableOpacity style={{ width: "20%", alignItems: "flex-end", marginTop: 20, marginLeft: -20 }} onPress={() => navigation.navigate("Chat")}>
-                        <AntDesign name="wechat" size={34} color="#05375a" />
+                    <TouchableOpacity style={{ width: "20%", alignItems: "flex-end", marginLeft: -20 }} onPress={() => navigation.navigate("Chat")}>
+                        <AntDesign name="wechat" size={34} color="#FFF" />
                     </TouchableOpacity>
-
-
                 </View>
             </View>
 
@@ -220,37 +218,104 @@ const Home = ({ navigation }) => {
                     {days > 0 ? (
                         <View>
                             <Text style={styles.content}>Harabura Iminsi {days}</Text>
-                            <Text style={styles.content1}>Mufate urukingo</Text>
+                            <Text style={styles.content1}>Mufate urukingo rukurikira</Text>
                         </View>
                     ) : (
                         <View>
                             <Text style={styles.content}>Harabura Iminsi 90</Text>
-                            <Text style={styles.content1}>Mufate urukingo</Text>
+                            <Text style={styles.content1}>Mufate urukingo rukurikira</Text>
                         </View>
                     )}
 
                 </View>
+
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} contentContainerStyle={{ height: 120 }}>
+                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
+                        <View style={{ justifyContent: "center" }}>
+                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800', }}>1</Text>
+                        </View>
+                        <View style={{ justifyContent: "center" }}>
+                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Akivuka</Text>
+                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>Igituntu,Imbasa</Text>
+                        </View>
+                    </View>
+                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
+                        <View style={{ justifyContent: "center" }}>
+                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800' }}>2</Text>
+                        </View>
+                        <View style={{ justifyContent: "center", width: "90%" }}>
+                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Ukwezi n'igIce</Text>
+                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>IMBASA, KOKORISHI, AGAKWEGA/AKANIGA, Hbi, HEPATITE B, PINEMOKOKE</Text>
+                        </View>
+                    </View>
+                </ScrollView>
+
+
+
+
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
+                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
+                        <View style={{ justifyContent: "center" }}>
+                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800', }}>3</Text>
+                        </View>
+                        <View style={{ justifyContent: "center" }}>
+                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Amezi Abiri n'igice</Text>
+                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>IMBASA, KOKORISHI, AGAKWEGA/AKANIGA, Hbi, HEPATITE B, PINEMOKOKE</Text>
+                        </View>
+                    </View>
+                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
+                        <View style={{ justifyContent: "center" }}>
+                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800' }}>4</Text>
+                        </View>
+                        <View style={{ justifyContent: "center", width: "90%" }}>
+                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Amezi Atatu n'igice</Text>
+                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>IMBASA, KOKORISHI, AGAKWEGA/AKANIGA, Hbi, HEPATITE B, PINEMOKOKE</Text>
+                        </View>
+                    </View>
+                </ScrollView>
+
+
+
+
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 10 }}>
+                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
+                        <View style={{ justifyContent: "center" }}>
+                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800', }}>5</Text>
+                        </View>
+                        <View style={{ justifyContent: "center" }}>
+                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Amezi icyenda</Text>
+                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>ISERU. VITAMINI A</Text>
+                        </View>
+                    </View>
+                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
+                        <View style={{ justifyContent: "center" }}>
+                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800' }}>6</Text>
+                        </View>
+                        <View style={{ justifyContent: "center", width: "90%" }}>
+                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Amezi icyenda</Text>
+                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>INZITIRAMIbu IITEYE UMUTI</Text>
+                        </View>
+                    </View>
+                </ScrollView>
+
             </View>
 
-
-
-
-            <View style={{ backgroundColor: "#e9ecef", height: 90, flexDirection: "row", alignItems: "center", borderTopRightRadius: 20, borderTopLeftRadius: 20 }}>
+            <View style={{ backgroundColor: "#219ebc", height: 90, flexDirection: "row", alignItems: "center", borderTopRightRadius: 10, borderTopLeftRadius: 10, shadowColor: '#999', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 2, shadowRadius: 5, elevation: 5, }}>
 
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", width: "30%", justifyContent: "center", alignItems: "center" }}
                     onPress={() => navigation.navigate("Home")}>
 
-                    <AntDesign name="home" size={30} color="#05375a" />
+                    <Entypo name="home" size={30} color="#023047" />
                 </TouchableOpacity>
 
 
                 <TouchableOpacity style={{ marginLeft: "0%", justifyContent: "center", alignItems: "center", width: "40%" }}
-                    onPress={() => navigation.navigate("Guide")}
+                    onPress={() => navigation.navigate("Report")}
                 >
 
-                    <Feather name="book-open" size={30} color="#05375a" />
+                    <MaterialIcons name="table-chart" size={30} color="#fff" />
                 </TouchableOpacity>
 
 
@@ -258,7 +323,7 @@ const Home = ({ navigation }) => {
                     onPress={() => navigation.navigate("Settings")}
                 >
 
-                    <AntDesign name="setting" size={30} color="#05375a" />
+                    <Ionicons name="settings" size={30} color="#fff" />
                 </TouchableOpacity>
             </View>
         </>
@@ -272,15 +337,14 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
+
 
     },
     Title: {
 
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: "bold",
-        marginHorizontal: 15,
+        marginHorizontal: 4,
         marginTop: 10,
         color: "#05375a"
     },
@@ -288,15 +352,15 @@ const styles = StyleSheet.create({
 
         fontSize: 16,
         fontWeight: "bold",
-        color: "#05375a"
+        color: "#000"
     },
     content1: {
         fontSize: 16,
         fontWeight: "bold",
-        color: "#05375a",
-        justifyContent:"center",
-        alignContent:"center",
-        alignItems:"center"
+        color: "#000",
+        justifyContent: "center",
+        alignContent: "center",
+        alignItems: "center"
     },
     Texties: {
 
@@ -349,13 +413,15 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1
     },
     Logo: {
-        backgroundColor: "#ffcfd2",
-        borderRadius: 1000,
-        width: "70%",
-        height: "57%",
+        backgroundColor: "#8ecae6",
+        borderRadius: 20,
+        width: "90%",
+        height: "20%",
         alignItems: "center",
         justifyContent: "center",
         shadowColor: "#707070",
+        marginTop: -40,
+        marginLeft: 20,
         shadowOffset: {
             width: 0,
             height: 5
