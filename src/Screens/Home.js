@@ -32,7 +32,7 @@ const Home = ({ navigation }) => {
         async function setInfo() {
 
             const id = await AsyncStorage.getItem('user_id')
-            axios.get(`https://a645-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
+            axios.get(`https://52f0-41-186-78-185.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
                 setCustomer(res.data[0])
                 if (res.data[0].DOB != null) {
                     getVaccineDay(res.data[0].DOB)
@@ -229,73 +229,34 @@ const Home = ({ navigation }) => {
 
                 </View>
 
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} contentContainerStyle={{ height: 120 }}>
-                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
-                        <View style={{ justifyContent: "center" }}>
-                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800', }}>1</Text>
-                        </View>
-                        <View style={{ justifyContent: "center" }}>
-                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Akivuka</Text>
-                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>Igituntu,Imbasa</Text>
-                        </View>
-                    </View>
-                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
-                        <View style={{ justifyContent: "center" }}>
-                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800' }}>2</Text>
-                        </View>
+                <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{ height: 120 }}>
+                    <TouchableOpacity onPress={() => navigation.navigate("Schedule")} style={{ backgroundColor: "#023047", height: 100, width: 350, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
                         <View style={{ justifyContent: "center", width: "90%" }}>
-                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Ukwezi n'igIce</Text>
-                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>IMBASA, KOKORISHI, AGAKWEGA/AKANIGA, Hbi, HEPATITE B, PINEMOKOKE</Text>
+                            <Text style={{ fontSize: 16, color: 'white', marginHorizontal: 15, fontWeight: '500' }}>GAHUNDA YO GUKINGIZA UMWANA</Text>
                         </View>
-                    </View>
-                </ScrollView>
-
-
-
-
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
-                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
-                        <View style={{ justifyContent: "center" }}>
-                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800', }}>3</Text>
+                        <View style={{ justifyContent: "center", alignItems: "flex-end" }}>
+                            <MaterialIcons name="keyboard-arrow-right" size={30} color="white" />
                         </View>
-                        <View style={{ justifyContent: "center" }}>
-                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Amezi Abiri n'igice</Text>
-                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>IMBASA, KOKORISHI, AGAKWEGA/AKANIGA, Hbi, HEPATITE B, PINEMOKOKE</Text>
-                        </View>
-                    </View>
-                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
-                        <View style={{ justifyContent: "center" }}>
-                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800' }}>4</Text>
-                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate("Feeding")} style={{ backgroundColor: "#023047", height: 100, width: 350, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
                         <View style={{ justifyContent: "center", width: "90%" }}>
-                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Amezi Atatu n'igice</Text>
-                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>IMBASA, KOKORISHI, AGAKWEGA/AKANIGA, Hbi, HEPATITE B, PINEMOKOKE</Text>
+                            <Text style={{ fontSize: 16, color: 'white', marginHorizontal: 15, fontWeight: '500' }}>UBUTUMWA BW'INGENZI KUMIRIRE</Text>
                         </View>
-                    </View>
-                </ScrollView>
-
-
-
-
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 10 }}>
-                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
-                        <View style={{ justifyContent: "center" }}>
-                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800', }}>5</Text>
+                        <View style={{ justifyContent: "center", alignItems: "flex-end" }}>
+                            <MaterialIcons name="keyboard-arrow-right" size={30} color="white" />
                         </View>
-                        <View style={{ justifyContent: "center" }}>
-                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Amezi icyenda</Text>
-                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>ISERU. VITAMINI A</Text>
-                        </View>
-                    </View>
-                    <View style={{ backgroundColor: "#023047", height: 100, width: 300, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomLeftRadius: 5, borderBottomRightRadius: 40 }}>
-                        <View style={{ justifyContent: "center" }}>
-                            <Text style={{ fontSize: 50, color: "#fff", marginHorizontal: 6, fontWeight: '800' }}>6</Text>
-                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => navigation.navigate("Notice")}  style={{ backgroundColor: "#023047", height: 100, width: 350, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
                         <View style={{ justifyContent: "center", width: "90%" }}>
-                            <Text style={{ fontSize: 16,color: 'white', fontWeight: 'bold' }}>Amezi icyenda</Text>
-                            <Text style={{ fontSize: 12, fontWeight: "normal", color: "#fff" }}>INZITIRAMIbu IITEYE UMUTI</Text>
+                            <Text style={{ fontSize: 16, color: 'white', marginHorizontal: 15, fontWeight: '500' }}>ICYITONDERWA</Text>
                         </View>
-                    </View>
+                        <View style={{ justifyContent: "center", alignItems: "flex-end" }}>
+                            <MaterialIcons name="keyboard-arrow-right" size={30} color="white" />
+                        </View>
+                    </TouchableOpacity>
+
                 </ScrollView>
 
             </View>

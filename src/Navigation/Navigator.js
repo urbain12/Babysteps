@@ -11,8 +11,10 @@ import Settings from '../Screens/Settings';
 import Register from '../Screens/Register';
 import Chat from '../Screens/Chat';
 import ChangePassword from '../Screens/ChangePassword';
-import Report from '../Screens/Report'
-
+import Report from '../Screens/Report';
+import Schedule from '../Screens/Schedule';
+import Feeding from '../Screens/Feeding';
+import Notice from '../Screens/Notice';
 import { AuthContext } from '../context/context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Notifications from 'expo-notifications';
@@ -157,7 +159,7 @@ const HomeStackNavigator = (props) => {
                 // Authorization: `Token ${my_token}`,
             };
 
-            await axios.post("https://a645-41-186-143-119.eu.ngrok.io/customer_login/", postObj)
+            await axios.post("https://52f0-41-186-78-185.eu.ngrok.io/customer_login/", postObj)
                 .then(res => {
                     console.log(res)
                     if (res.data.code == 200) {
@@ -285,6 +287,9 @@ const HomeStackNavigator = (props) => {
                         <Stack.Screen name="Chat" component={Chat} />
                         <Stack.Screen name="ChangePassword" component={ChangePassword} />
                         <Stack.Screen name="Guide" component={Guide} />
+                        <Stack.Screen name='Schedule' component={Schedule} />
+                        <Stack.Screen name='Feeding' component={Feeding} />
+                        <Stack.Screen name='Notice' component={Notice} />
                         <Stack.Screen name="Settings" component={Settings} />
                         <Stack.Screen name="Report" component={Report} />
                     </Stack.Navigator>

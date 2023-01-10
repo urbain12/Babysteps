@@ -49,7 +49,7 @@ const Chat = ({ navigation }) => {
         LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
         async function setInfo2() {
             const id = await AsyncStorage.getItem('user_id')
-            axios.get(`https://a645-41-186-143-119.eu.ngrok.io/Queriesbyid/${id}`).then((res) => {
+            axios.get(`https://52f0-41-186-78-185.eu.ngrok.io/Queriesbyid/${id}`).then((res) => {
                 setResponses(res.data)
                 // console.log(res.data)
             }).catch(err => {
@@ -73,7 +73,7 @@ const Chat = ({ navigation }) => {
 
             const id = await AsyncStorage.getItem('user_id')
             setMyID(id)
-            axios.get(`https://a645-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
+            axios.get(`https://52f0-41-186-78-185.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
                 setCustomer(res.data[0])
             }).catch(err => {
                 console.log(err)
@@ -108,7 +108,7 @@ const Chat = ({ navigation }) => {
             // Authorization: `Token ${my_token}`,
         };
 
-        axios.post('https://a645-41-186-143-119.eu.ngrok.io/CreateQuery/', postObj).then((res) => {
+        axios.post('https://52f0-41-186-78-185.eu.ngrok.io/CreateQuery/', postObj).then((res) => {
             console.log(res.status)
             navigation.navigate('Chat')
         }).catch(err => {
