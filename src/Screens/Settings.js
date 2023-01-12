@@ -71,7 +71,7 @@ const Settings = ({ navigation }) => {
                             <Entypo name="chat" size={30} color="#adb5bd" />
                         </View>
 
-                        <TouchableOpacity style={{ width: "75%", marginLeft: -15, marginTop: 5 }}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Chat")} style={{ width: "75%", marginLeft: -15, marginTop: 5 }}>
                             <Text style={styles.Title}>Kuganira</Text>
                         </TouchableOpacity>
 

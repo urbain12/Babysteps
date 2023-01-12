@@ -32,7 +32,7 @@ const Home = ({ navigation }) => {
         async function setInfo() {
 
             const id = await AsyncStorage.getItem('user_id')
-            axios.get(`https://52f0-41-186-78-185.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
+            axios.get(`https://8e78-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
                 setCustomer(res.data[0])
                 if (res.data[0].DOB != null) {
                     getVaccineDay(res.data[0].DOB)
@@ -231,26 +231,35 @@ const Home = ({ navigation }) => {
 
                 <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{ height: 120 }}>
                     <TouchableOpacity onPress={() => navigation.navigate("Schedule")} style={{ backgroundColor: "#023047", height: 100, width: 350, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
-                        <View style={{ justifyContent: "center", width: "90%" }}>
-                            <Text style={{ fontSize: 16, color: 'white', marginHorizontal: 15, fontWeight: '500' }}>GAHUNDA YO GUKINGIZA UMWANA</Text>
+                        <View style={{ justifyContent: "center", alignItems: "flex-end", width: "10%", marginHorizontal: 2 }}>
+                            <MaterialIcons name="schedule" size={35} color="white" />
                         </View>
-                        <View style={{ justifyContent: "center", alignItems: "flex-end" }}>
+                        <View style={{ justifyContent: "center", width: "80%" }}>
+                            <Text style={{ fontSize: 16, color: 'white', marginHorizontal: 2, fontWeight: '500' }}>GAHUNDA YO GUKINGIZA UMWANA</Text>
+                        </View>
+                        <View style={{ justifyContent: "center", alignItems: "flex-end", width: "10%" }}>
                             <MaterialIcons name="keyboard-arrow-right" size={30} color="white" />
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => navigation.navigate("Feeding")} style={{ backgroundColor: "#023047", height: 100, width: 350, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
-                        <View style={{ justifyContent: "center", width: "90%" }}>
-                            <Text style={{ fontSize: 16, color: 'white', marginHorizontal: 15, fontWeight: '500' }}>UBUTUMWA BW'INGENZI KUMIRIRE</Text>
+                        <View style={{ justifyContent: "center", alignItems: "flex-end", width: "10%", marginHorizontal: 2 }}>
+                            <MaterialIcons name="info-outline" size={35} color="white" />
+                        </View>
+                        <View style={{ justifyContent: "center", width: "80%" }}>
+                            <Text style={{ fontSize: 16, color: 'white', marginHorizontal: 2, fontWeight: '500' }}>UBUTUMWA BW'INGENZI KUMIRIRE</Text>
                         </View>
                         <View style={{ justifyContent: "center", alignItems: "flex-end" }}>
                             <MaterialIcons name="keyboard-arrow-right" size={30} color="white" />
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => navigation.navigate("Notice")}  style={{ backgroundColor: "#023047", height: 100, width: 350, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
-                        <View style={{ justifyContent: "center", width: "90%" }}>
-                            <Text style={{ fontSize: 16, color: 'white', marginHorizontal: 15, fontWeight: '500' }}>ICYITONDERWA</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("Notice")} style={{ backgroundColor: "#023047", height: 100, width: 350, flexDirection: "row", marginTop: 20, marginHorizontal: 15, borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
+                        <View style={{ justifyContent: "center", alignItems: "flex-end", width: "10%", marginHorizontal: 4 }}>
+                            <AntDesign name="exclamationcircleo" size={35} color="white" />
+                        </View>
+                        <View style={{ justifyContent: "center", width: "80%" }}>
+                            <Text style={{ fontSize: 16, color: 'white', marginHorizontal: 2, fontWeight: '500' }}>ICYITONDERWA</Text>
                         </View>
                         <View style={{ justifyContent: "center", alignItems: "flex-end" }}>
                             <MaterialIcons name="keyboard-arrow-right" size={30} color="white" />

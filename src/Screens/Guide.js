@@ -26,7 +26,7 @@ const Guide = ({ navigation }) => {
         async function setInfo() {
 
             const id = await AsyncStorage.getItem('user_id')
-            axios.get(`https://52f0-41-186-78-185.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
+            axios.get(`https://8e78-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
                 setCustomer(res.data[0])
             }).catch(err => {
                 console.log(err)
