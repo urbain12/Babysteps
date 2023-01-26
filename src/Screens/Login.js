@@ -92,12 +92,12 @@ const Login = ({ navigation }) => {
                 <View style={{ marginTop: 50, marginBottom: 15 }}>
 
                     <Text style={{ fontSize: 32, fontWeight: "900", marginLeft: 25, letterSpacing: 2 }}>Isaro</Text>
-                    <Text style={{ fontSize: 15, marginLeft: 25 }}>Intambwe z'umwana Wanjye</Text>
+                    <Text style={{ fontSize: 15, marginLeft: 25 }}>Inkingo z'umwana Wanjye</Text>
                 </View>
 
                 <View style={styles.Formcontainer}>
                     <Icon
-                        name="mail"
+                        name="phone"
                         color="grey"
                         size={20}
                         style={[styles.icon, { marginLeft: 10 }]}

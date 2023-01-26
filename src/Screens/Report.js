@@ -10,6 +10,8 @@ import {
     ScrollView,
     ActivityIndicator,
     TextInput,
+    LogBox,
+
 } from "react-native";
 import { MaterialCommunityIcons, FontAwesome5, FontAwesome,Feather, Ionicons, Entypo, AntDesign,MaterialIcons } from "@expo/vector-icons";
 import { AuthContext } from '../context/context';
@@ -22,11 +24,12 @@ const Report = ({ navigation }) => {
 
     const [customer, setCustomer] = useState('')
 
-    useEffect(() => {
+    React.useEffect(() => {
+        LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
         async function setInfo() {
 
             const id = await AsyncStorage.getItem('user_id')
-            axios.get(`https://8e78-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
+            axios.get(`https://5bf2-41-186-143-119.eu.ngrok.io/getchildbyid/${id}`).then((res) => {
                 setCustomer(res.data[0])
                 console.log("hello",res.data[0])
             }).catch(err => {
@@ -35,7 +38,9 @@ const Report = ({ navigation }) => {
 
         }
 
-        setInfo()
+        setInterval(() => {
+            setInfo()
+        }, 500)
 
     }, [])
 
